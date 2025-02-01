@@ -1,28 +1,29 @@
+import 'package:action_panel/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TableCard extends StatelessWidget {
   final String tableName;
   final int seatNumber;
-  final Color tableColor;
+  final Color tableCardColor;
   final Color borderColor;
 
   const TableCard({
     Key? key,
     required this.tableName,
     required this.seatNumber,
-    required this.tableColor,
+    required this.tableCardColor,
     required this.borderColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 182.64,
+      width: 180.64,
       height: 138.39,
       decoration: BoxDecoration(
-        color: tableColor,
-        borderRadius: BorderRadius.circular(48.62),
+        color: tableCardColor,
+        borderRadius: Utils.tableCardRadius,
         border: Border.all(
           color: borderColor,
           width: 4,
@@ -50,15 +51,13 @@ class TableCard extends StatelessWidget {
             children: [
               Text(
                 tableName,
-                style:
-
-              ),
+                style:Utils.tableTextStyle),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     seatNumber.toString(),
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: Utils.tableTextStyle,
                   ),
                   SizedBox(width: 5),
                   Icon(Icons.people, size: 25),

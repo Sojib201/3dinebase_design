@@ -15,13 +15,13 @@ class Utils {
 
 
   static Color availabeTableColor = Color(0xFF49D18F);
-  static Color reservedTableColor = Color(0xFF49D18F);
-  static Color bookedTableColor = Color(0xFF49D18F);
+  static Color reservedTableColor = Color(0xFFFEC145);
+  static Color bookedTableColor = Color(0xFFED7A08);
   static Color primaryColor = Color(0xFFFDFEFF);
   static Color secondaryColor = Color(0xFF50525F);
 
   static Color textColor = Color(0xFF000000);
   static Color delivery_collectionColor = Color(0xFFFEC145);
 
-  static BorderRadius borderRadius = BorderRadius.circular(12);
+  static BorderRadius tableCardRadius = BorderRadius.circular(48.62);
 }
