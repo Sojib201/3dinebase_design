@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:action_panel/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,32 +28,36 @@ class TableCard extends StatelessWidget {
         borderRadius: Utils.tableCardRadius,
         border: Border.all(
           color: borderColor,
-          width: 4,
+          width: 5,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 4,
-            offset: Offset(2, 2),
-          ),
-        ],
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.asset(
-            color: Colors.green,
-            'assets/table.png',
-            width: 82.55,
-            height: 57.65,
+          Stack(
+            children: [
+              Opacity(
+                  child: SizedBox(
+                      height: 90,
+                      child:
+                          Image.asset('assets/table.png', color: Colors.black)),
+                  opacity: 0.2),
+              ClipRect(
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 0, sigmaY: -10),
+                  child: SizedBox(
+                    height: 90,
+                    child: Image.asset('assets/table.png'),
+                  ),
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 20),
+         SizedBox(height: 2,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                tableName,
-                style:Utils.tableTextStyle),
+              Text(tableName, style: Utils.tableTextStyle),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

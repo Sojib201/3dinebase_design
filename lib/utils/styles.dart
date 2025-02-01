@@ -7,12 +7,24 @@ class Utils {
     fontSize: 18,
   );
 
-  static TextStyle heading2 = const TextStyle(
+  static TextStyle heading1 = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.w600,
-    color: Colors.black54,
+    fontWeight: FontWeight.bold,
+    color: Utils.primaryColor,
   );
 
+
+  static TextStyle heading2 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Utils.secondaryColor,
+  );
+
+  static TextStyle heading3 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: Utils.secondaryColor,
+  );
 
   static Color availabeTableColor = Color(0xFF49D18F);
   static Color reservedTableColor = Color(0xFFFEC145);
