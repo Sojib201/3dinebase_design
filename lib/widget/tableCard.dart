@@ -2,29 +2,28 @@ import 'dart:ui';
 
 import 'package:action_panel/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class TableCard extends StatelessWidget {
   final String tableName;
   final int seatNumber;
-  final Color tableCardColor;
+  final Color tableColor;
   final Color borderColor;
 
   const TableCard({
     Key? key,
     required this.tableName,
     required this.seatNumber,
-    required this.tableCardColor,
+    required this.tableColor,
     required this.borderColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180.64,
+      width: 175,
       height: 138.39,
       decoration: BoxDecoration(
-        color: tableCardColor,
+        color: Utils.primaryColor,
         borderRadius: Utils.tableCardRadius,
         border: Border.all(
           color: borderColor,
@@ -37,23 +36,29 @@ class TableCard extends StatelessWidget {
           Stack(
             children: [
               Opacity(
-                  child: SizedBox(
-                      height: 90,
-                      child:
-                          Image.asset('assets/table.png', color: Colors.black)),
-                  opacity: 0.2),
+                opacity: 0.75,
+                child: SizedBox(
+                  height: 90,
+                  child: Image.asset('assets/table.png', color: Utils.black),
+                ),
+              ),
               ClipRect(
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 0, sigmaY: -10),
                   child: SizedBox(
                     height: 90,
-                    child: Image.asset('assets/table.png'),
+                    child: Image.asset(
+                      'assets/table.png',
+                      color: tableColor,
+                    ),
                   ),
                 ),
               ),
             ],
           ),
-         SizedBox(height: 2,),
+          SizedBox(
+            height: 5,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -66,7 +71,11 @@ class TableCard extends StatelessWidget {
                     style: Utils.tableTextStyle,
                   ),
                   SizedBox(width: 5),
-                  Icon(Icons.people, size: 25),
+                  Icon(
+                    Icons.people,
+                    size: 30,
+                    color: Utils.secondaryColor,
+                  ),
                 ],
               ),
             ],
