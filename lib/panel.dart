@@ -1,9 +1,13 @@
 import 'package:action_panel/action_panel.dart';
 import 'package:action_panel/utils/styles.dart';
 import 'package:action_panel/widget/TableStatusWidget.dart';
+import 'package:action_panel/widget/custom_button_widget.dart';
+import 'package:action_panel/widget/delivery_collection_card_widget.dart';
 import 'package:action_panel/widget/tableArea.dart';
 import 'package:action_panel/widget/tableCard.dart';
+import 'package:action_panel/widget/title_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'model/tableModel.dart';
 
@@ -617,7 +621,7 @@ class _ActionPanelState extends State<ActionPanel> {
                         child: Column(
                           children: [
                             Container(
-                              height: MediaQuery.of(context).size.height / 3.5,
+                              height: MediaQuery.of(context).size.height / 3.2,
                               width: MediaQuery.of(context).size.width,
                               decoration: const BoxDecoration(
                                 color: Colors.white,
@@ -627,215 +631,255 @@ class _ActionPanelState extends State<ActionPanel> {
                               ),
                               child: Column(
                                 children: [
-                                  SizedBox(height: 10,),
+                                  SizedBox(
+                                    height: 16.h,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 12.w),
+                                        height: 100.h,
+                                        //width: 240.w,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              width: 1,
+                                              color: Utils.secondaryColor),
+                                          color: Utils.primaryColor,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(28.r)),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Jan 28, 2025',
+                                            style: Utils.heading2,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 24.w,
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 12.w),
+                                        height: 100.h,
+                                        //width: 240.w,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              width: 1,
+                                              color: Utils.secondaryColor),
+                                          color: Utils.primaryColor,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(28.r)),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            '12.17 PM',
+                                            style: Utils.heading2,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
 
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+
+                                  GestureDetector(
+                                      onTap: () {
+                                        print('sdfgsgsd');
+                                      },
+                                      child: CustomButton(
+                                          icon: Icons.notifications,
+                                          text: 'Notifications')),
+
+                                  SizedBox(
+                                    height: 10,
+                                  ),
                                   GestureDetector(
                                     onTap: () {
                                       print('sdfgsgsd');
                                     },
-                                    child: Container(
-                                      width: 232,
-                                      height: 48,
-                                      decoration: BoxDecoration(
-                                        //border: Border.all(width: 0.1,color: Color(0xffff50525F),),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(14),
-                                        ),
-                                        color: Utils.primaryColor,
-                                        // boxShadow: [
-                                        //   BoxShadow(
-                                        //     color: Utils.secondaryColor.withOpacity(0.5),
-                                        //     blurRadius: 38,
-                                        //     spreadRadius: -10,  // Negative spread radius for inner shadow effect
-                                        //     offset: const Offset(0, -20),  // Adjust the direction of the shadow
-                                        //   ),
-                                        // ],
-                                      ),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(14),
-                                        ),
-                                        child: Container(
-                                          color: Utils.primaryColor,
-                                          child: Stack(
-                                            children: [
-                                              Positioned.fill(
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(width: 0.4,color: Color(0xffff50525F),),
-                                                    color: Colors.transparent,
-                                                    borderRadius: BorderRadius.all(
-                                                      Radius.circular(14),
-                                                    ),
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        color: Utils.secondaryColor.withOpacity(0.4),
-                                                        blurRadius:9.72,
-                                                        spreadRadius: 0,  // Negative spread radius for inner shadow effect
-                                                        offset: const Offset(0,2), // Inner shadow effect
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.symmetric(horizontal: 22,vertical: 12),
-                                                child: Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.notifications,size: 28,
-                                                      color: Utils.black,
-                                                    ),
-                                                    const SizedBox(width: 30),
-                                                    Text(
-                                                      textAlign: TextAlign.center,
-                                                      'Notification',
-                                                      style: Utils.heading4,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
+                                    child: CustomButton(
+                                      text: 'New Order',
+                                      icon: Icons.add_circle_outline,
                                     ),
                                   ),
+                                  // GestureDetector(
+                                  //   onTap: () {
+                                  //     print('sdfgsgsd');
+                                  //   },
+                                  //   child: Container(
+                                  //     width: 500.w,
+                                  //     height: 100.h,
+                                  //     decoration: BoxDecoration(
+                                  //       borderRadius: BorderRadius.all(
+                                  //           Radius.circular(28.r)),
+                                  //     ),
+                                  //     child: ClipRRect(
+                                  //       borderRadius: BorderRadius.all(
+                                  //           Radius.circular(28.r)),
+                                  //       child: Container(
+                                  //         decoration: BoxDecoration(),
+                                  //         child: Stack(
+                                  //           children: [
+                                  //             Positioned.fill(
+                                  //               child: Container(
+                                  //                 decoration: BoxDecoration(
+                                  //                   border: Border.all(
+                                  //                       width: 0.9.w,
+                                  //                       color: Color(
+                                  //                           0xffff50525F)),
+                                  //                   color: Colors.transparent,
+                                  //                   borderRadius:
+                                  //                       BorderRadius.all(
+                                  //                           Radius.circular(
+                                  //                               28.r)),
+                                  //                   boxShadow: [
+                                  //                     BoxShadow(
+                                  //                       color: Utils
+                                  //                           .secondaryColor
+                                  //                           .withOpacity(0.6),
+                                  //                       blurRadius: 10,
+                                  //                       spreadRadius: 20,
+                                  //                       offset:
+                                  //                           const Offset(0, 0),
+                                  //                     ),
+                                  //                     BoxShadow(
+                                  //                       color: Utils
+                                  //                           .primaryColor
+                                  //                           .withOpacity(0.45),
+                                  //                       blurRadius: 8,
+                                  //                       spreadRadius: -30,
+                                  //                       offset:
+                                  //                           const Offset(0, 0),
+                                  //                     ),
+                                  //                     BoxShadow(
+                                  //                       color: Utils
+                                  //                           .primaryColor
+                                  //                           .withOpacity(1),
+                                  //                       blurRadius: 20,
+                                  //                       spreadRadius: -10,
+                                  //                       offset:
+                                  //                           const Offset(0, 2),
+                                  //                     ),
+                                  //                   ],
+                                  //                 ),
+                                  //               ),
+                                  //             ),
+                                  //             Padding(
+                                  //               padding: EdgeInsets.symmetric(
+                                  //                   horizontal: 40.w),
+                                  //               child: Row(
+                                  //                 children: [
+                                  //                   Padding(
+                                  //                     padding:
+                                  //                         EdgeInsets.symmetric(
+                                  //                             vertical: 12.h),
+                                  //                     child: Icon(
+                                  //                       Icons
+                                  //                           .add_circle_outline,
+                                  //                       size: 65.r,
+                                  //                       color: Utils.black,
+                                  //                     ),
+                                  //                   ),
+                                  //                   SizedBox(width: 60.w),
+                                  //                   Padding(
+                                  //                     padding:
+                                  //                         EdgeInsets.symmetric(
+                                  //                             vertical: 20.h),
+                                  //                     child: Text(
+                                  //                       'New Order',
+                                  //                       textAlign:
+                                  //                           TextAlign.center,
+                                  //                       style: Utils.heading4,
+                                  //                     ),
+                                  //                   ),
+                                  //                 ],
+                                  //               ),
+                                  //             ),
+                                  //           ],
+                                  //         ),
+                                  //       ),
+                                  //     ),
+                                  //   ),
+                                  // ),
 
-                                  SizedBox(height: 16,),
-                                  GestureDetector(
-                                    onTap: () {
-                                      print('sdfgsgsd');
-                                    },
-                                    child: Container(
-                                      width: 232,
-                                      height: 48,
-                                      decoration: BoxDecoration(
-                                        //border: Border.all(width: 0.1,color: Color(0xffff50525F),),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(14),
-                                        ),
-                                        color: Utils.primaryColor,
-                                        // boxShadow: [
-                                        //   BoxShadow(
-                                        //     color: Utils.secondaryColor.withOpacity(0.5),
-                                        //     blurRadius: 38,
-                                        //     spreadRadius: -10,  // Negative spread radius for inner shadow effect
-                                        //     offset: const Offset(0, -20),  // Adjust the direction of the shadow
-                                        //   ),
-                                        // ],
-                                      ),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(14),
-                                        ),
-                                        child: Container(
-                                          color: Utils.primaryColor,
-                                          child: Stack(
-                                            children: [
-                                              Positioned.fill(
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(width: 0.4,color: Color(0xffff50525F),),
-                                                    color: Colors.transparent,
-                                                    borderRadius: BorderRadius.all(
-                                                      Radius.circular(14),
-                                                    ),
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        color: Utils.secondaryColor.withOpacity(0.4),
-                                                        blurRadius:9.72,
-                                                        spreadRadius: 0,  // Negative spread radius for inner shadow effect
-                                                        offset: const Offset(0,2), // Inner shadow effect
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.symmetric(horizontal: 22,vertical: 12),
-                                                child: Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.add_circle_outline,size: 28,
-                                                      color: Utils.black,
-                                                    ),
-                                                    SizedBox(width:30,),
-                                                    Text(
-                                                      textAlign: TextAlign.center,
-                                                      'New Order',
-                                                      style: Utils.heading4,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
+                                  SizedBox(
+                                    height: 12,
                                   ),
-                                  SizedBox(height: 16,),
-                                  Container(
-                                    width: 232,
-                                    height: 48,
-                                    decoration: BoxDecoration(
-                                      //border: Border.all(width: 0.1,color: Color(0xffff50525F),),
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(14),
-                                      ),
-                                      color: Utils.primaryColor,
-                                      // boxShadow: [
-                                      //   BoxShadow(
-                                      //     color: Utils.secondaryColor.withOpacity(0.5),
-                                      //     blurRadius: 38,
-                                      //     spreadRadius: -10,  // Negative spread radius for inner shadow effect
-                                      //     offset: const Offset(0, -20),  // Adjust the direction of the shadow
-                                      //   ),
-                                      // ],
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(14),
-                                      ),
-                                      child: Container(
-                                        color: Utils.primaryColor,
-                                        child: Stack(
-                                          children: [
-                                            Positioned.fill(
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(width: 0.4,color: Color(0xffff50525F),),
-                                                  color: Colors.transparent,
-                                                  borderRadius: BorderRadius.all(
-                                                    Radius.circular(14),
-                                                  ),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Utils.secondaryColor.withOpacity(0.4),
-                                                      blurRadius:9.72,
-                                                      spreadRadius: 0,  // Negative spread radius for inner shadow effect
-                                                      offset: const Offset(0,2), // Inner shadow effect
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 37,vertical: 12),
-                                              child:Text(
-                                                textAlign: TextAlign.center,
-                                                'Number Not Found',
-                                                style: Utils.heading4,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-
+                                  CustomButton(
+                                      icon: null, text: 'Number Not Found'),
+                                  // Container(
+                                  //   width: 500.w,
+                                  //   height: 100.h,
+                                  //   decoration: BoxDecoration(
+                                  //     borderRadius: BorderRadius.all(
+                                  //         Radius.circular(28.r)),
+                                  //   ),
+                                  //   child: ClipRRect(
+                                  //     borderRadius: BorderRadius.all(
+                                  //         Radius.circular(28.r)),
+                                  //     child: Container(
+                                  //       decoration: BoxDecoration(),
+                                  //       child: Stack(
+                                  //         children: [
+                                  //           Positioned.fill(
+                                  //             child: Container(
+                                  //               decoration: BoxDecoration(
+                                  //                 border: Border.all(
+                                  //                     width: 0.9.w,
+                                  //                     color:
+                                  //                         Color(0xffff50525F)),
+                                  //                 color: Colors.transparent,
+                                  //                 borderRadius:
+                                  //                     BorderRadius.all(
+                                  //                         Radius.circular(
+                                  //                             28.r)),
+                                  //                 boxShadow: [
+                                  //                   BoxShadow(
+                                  //                     color: Utils
+                                  //                         .secondaryColor
+                                  //                         .withOpacity(0.6),
+                                  //                     blurRadius: 10,
+                                  //                     spreadRadius: 20,
+                                  //                     offset:
+                                  //                         const Offset(0, 0),
+                                  //                   ),
+                                  //                   BoxShadow(
+                                  //                     color: Utils.primaryColor
+                                  //                         .withOpacity(0.45),
+                                  //                     blurRadius: 8,
+                                  //                     spreadRadius: -30,
+                                  //                     offset:
+                                  //                         const Offset(0, 0),
+                                  //                   ),
+                                  //                   BoxShadow(
+                                  //                     color: Utils.primaryColor
+                                  //                         .withOpacity(1),
+                                  //                     blurRadius: 20,
+                                  //                     spreadRadius: -10,
+                                  //                     offset:
+                                  //                         const Offset(0, 2),
+                                  //                   ),
+                                  //                 ],
+                                  //               ),
+                                  //             ),
+                                  //           ),
+                                  //           Center(
+                                  //             child: Text(
+                                  //               'Number Not Found',
+                                  //               textAlign: TextAlign.center,
+                                  //               style: Utils.heading4,
+                                  //             ),
+                                  //           ),
+                                  //         ],
+                                  //       ),
+                                  //     ),
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ),
@@ -843,10 +887,11 @@ class _ActionPanelState extends State<ActionPanel> {
                               height: 10,
                             ),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
                                   height:
-                                      MediaQuery.of(context).size.height / 1.9,
+                                      MediaQuery.of(context).size.height / 2,
                                   width: MediaQuery.of(context).size.width / 8,
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
@@ -854,14 +899,31 @@ class _ActionPanelState extends State<ActionPanel> {
                                       Radius.circular(14),
                                     ),
                                   ),
-                                  child: Column(),
-                                ),
-                                const SizedBox(
-                                  width: 12,
+                                  child:  Column(
+                                    children: [
+                                      const customTitle(text: 'Delivery',),
+                                      SizedBox(height: 20.h,),
+
+                                      DeliveryCollectionWidget(
+                                        onTap: () {},
+                                        icon: Icons.directions_bike_sharp,
+                                        title: 'Hasan',
+                                        number: '0123542121',
+                                      ),
+                                      SizedBox(height: 18.h,),
+
+                                      DeliveryCollectionWidget(
+                                        onTap: () {},
+                                        icon: Icons.directions_bike_sharp,
+                                        title: '',
+                                        number: '0123542121',
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 Container(
                                   height:
-                                      MediaQuery.of(context).size.height / 1.9,
+                                      MediaQuery.of(context).size.height / 2,
                                   width: MediaQuery.of(context).size.width / 8,
                                   decoration: const BoxDecoration(
                                     color: Colors.white,
@@ -869,7 +931,27 @@ class _ActionPanelState extends State<ActionPanel> {
                                       Radius.circular(14),
                                     ),
                                   ),
-                                  child: Column(),
+                                  child: Column(
+                                    children: [
+                                      customTitle(text: 'Collection'),
+                                      SizedBox(height: 20.h,),
+
+                                      DeliveryCollectionWidget(
+                                        onTap: () {},
+                                        icon: Icons.shopping_cart_rounded,
+                                        title: 'Hasan',
+                                        number: '0123542121',
+                                      ),
+                                      SizedBox(height: 18.h,),
+
+                                      DeliveryCollectionWidget(
+                                        onTap: () {},
+                                        icon: Icons.shopping_cart_rounded,
+                                        title: 'Hasan',
+                                        number: '0123542121',
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),

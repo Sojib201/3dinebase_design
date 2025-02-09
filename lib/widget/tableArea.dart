@@ -55,6 +55,7 @@
 // }
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/styles.dart';
 
@@ -75,18 +76,18 @@ class TableArea extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 49.43,
-        width: 181.97,
+        height: 120.h,
+        width: 350.w,
         decoration: BoxDecoration(
           border: Border.all(width: 1, color: Utils.secondaryColor),
           color: isSelected ? Utils.secondaryColor : Utils.primaryColor,
-          borderRadius: const BorderRadius.all(Radius.circular(14)),
+          borderRadius:  BorderRadius.all(Radius.circular(30.r)),
           boxShadow: isSelected
               ? [
                   BoxShadow(
                     color: Utils.secondaryColor.withOpacity(0.5),
-                    blurRadius: 9.72,
-                    offset: const Offset(0, 5),
+                    blurRadius: 3,
+                    offset: const Offset(0, 2),
                   ),
                 ]
               : [],
