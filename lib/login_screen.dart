@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
   TextEditingController cidController = TextEditingController();
   TextEditingController userIdController = TextEditingController();
-  TextEditingController ipAdderss = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   bool visiblePassword = true;
 
   @override
@@ -30,8 +30,8 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Image.asset(
                   'assets/3dinebase.png',
-                  height: 280,
-                  width: 600,
+                  height: 600.h,
+                  width: 950.w,
                   fit: BoxFit.contain,
                 ),
                 SizedBox(height: 80.h),
@@ -45,7 +45,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       fillColor: Utils.primaryColor,
                       enabled: true,
                       focusColor: Utils.secondaryColor,
-
                       filled: true,
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -55,7 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
                       hintText: 'CID',
-                      hintStyle: TextStyle(color:Utils.secondaryColor.withOpacity(0.7),),
+                      hintStyle: TextStyle(
+                        color: Utils.secondaryColor.withOpacity(0.7),
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(28.r),
                         borderSide: BorderSide(color: Utils.logoColor),
@@ -79,7 +80,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: InputDecoration(
                       fillColor: Utils.primaryColor,
                       enabled: true,
-
                       focusColor: Utils.secondaryColor,
                       filled: true,
                       border: OutlineInputBorder(
@@ -87,7 +87,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
                       hintText: 'User ID',
-                      hintStyle: TextStyle(color: Utils.secondaryColor.withOpacity(0.7),),
+                      hintStyle: TextStyle(
+                        color: Utils.secondaryColor.withOpacity(0.7),
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(28.r),
                         borderSide: BorderSide(color: Utils.logoColor),
@@ -106,13 +108,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: MediaQuery.of(context).size.width / 1.19,
                   child: TextField(
                     onSubmitted: (value) {},
-                    controller: ipAdderss,
+                    controller: passwordController,
                     autofocus: true,
                     obscureText: visiblePassword,
                     decoration: InputDecoration(
                       fillColor: Utils.primaryColor,
                       enabled: true,
-
                       focusColor: Utils.secondaryColor,
                       filled: true,
                       border: OutlineInputBorder(
@@ -120,7 +121,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
                       hintText: 'Password',
-                      hintStyle: TextStyle(color: Utils.secondaryColor.withOpacity(0.7),),
+                      hintStyle: TextStyle(
+                        color: Utils.secondaryColor.withOpacity(0.7),
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(28.r),
                         borderSide: BorderSide(color: Utils.logoColor),
@@ -167,8 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                         child: Container(
-                          //padding: EdgeInsets.all(8.h),
-                          width: MediaQuery.of(context).size.width/2,
+                          width: MediaQuery.of(context).size.width / 2,
                           height: 130.h,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(28.r),
@@ -187,7 +189,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           color: Utils.secondaryColor),
                                       color: Colors.transparent,
                                       borderRadius: BorderRadius.all(
-                                          Radius.circular(28.r)),
+                                        Radius.circular(28.r),
+                                      ),
                                       boxShadow: [
                                         BoxShadow(
                                           color: Utils.secondaryColor
@@ -218,12 +221,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Text(
                                     'Login',
                                     style: TextStyle(
-                                        letterSpacing: 1,
+                                        letterSpacing: 2.sp,
                                         fontSize: 60.sp,
                                         fontWeight: FontWeight.bold,
-                                        color: ipAdderss.text.isEmpty
-                                            ? Colors.black.withOpacity(.8)
-                                            : Colors.black),
+                                        color: passwordController.text.isEmpty
+                                            ? Utils.secondaryColor
+                                            : Colors.green),
                                   ),
                                 ),
                               ],
