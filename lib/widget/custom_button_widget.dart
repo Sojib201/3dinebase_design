@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
-                  border: Border.all(width: 0.9.w, color: Utils.secondaryColor),
+                  border: Border.all(width: 2.w, color: Utils.secondaryColor),
                   color: Colors.transparent,
                   borderRadius: BorderRadius.all(Radius.circular(28.r)),
                   boxShadow: [
