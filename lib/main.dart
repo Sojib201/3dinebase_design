@@ -1,10 +1,16 @@
 import 'package:action_panel/panel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
 import 'action_panel.dart';
+import 'login_screen.dart';
 
-void main() {
+
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox('appInfo');
   runApp(const MyApp());
 }
 
@@ -26,8 +32,8 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          //home: DashboardScreen(),
-          home: ActionPanel(),
+          home: LoginScreen(),
+          //home: ActionPanel(),
         );
       },
 
