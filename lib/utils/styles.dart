@@ -42,8 +42,7 @@ class Utils {
   static Color secondaryColor = Color(0xFF50525F);
   static Color black = Color(0xFF000000);
   static Color heading = Color(0xFFFEC145);
-
-  static Color textColor = Color(0xFF000000);
+  static Color logoColor = Color(0xFF970903);
 
   static Color delivery_collectionColor = Color(0xFFFEC145);
 

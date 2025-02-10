@@ -1,9 +1,5 @@
-import 'dart:convert';
-
-import 'package:action_panel/main.dart';
 import 'package:action_panel/panel.dart';
 import 'package:action_panel/utils/styles.dart';
-import 'package:action_panel/widget/custom_button_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +13,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
+  TextEditingController cidController = TextEditingController();
+  TextEditingController userIdController = TextEditingController();
   TextEditingController ipAdderss = TextEditingController();
   bool visiblePassword = true;
 
@@ -24,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Utils.primaryColor,
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Center(
@@ -40,26 +39,63 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: MediaQuery.of(context).size.width / 1.19,
                   child: TextField(
                     onSubmitted: (value) {},
-                    controller: ipAdderss,
+                    controller: cidController,
                     autofocus: true,
-                    obscureText: visiblePassword,
                     decoration: InputDecoration(
-                      enabled: true,
-                      focusColor: Colors.green,
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      filled: true,
                       fillColor: Utils.primaryColor,
+                      enabled: true,
+                      focusColor: Utils.secondaryColor,
+
+                      filled: true,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.green,
+                        ),
+                        borderRadius: BorderRadius.circular(28.r),
                       ),
                       contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
                       hintText: 'CID',
-                      hintStyle: TextStyle(color: Colors.grey.shade500),
+                      hintStyle: TextStyle(color:Utils.secondaryColor.withOpacity(0.7),),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                        borderSide: BorderSide(color: Utils.logoColor),
+                      ),
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.green)),
+                        borderRadius: BorderRadius.circular(28.r),
+                        borderSide: BorderSide(color: Utils.secondaryColor),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30.h,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 1.19,
+                  child: TextField(
+                    onSubmitted: (value) {},
+                    controller: userIdController,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      fillColor: Utils.primaryColor,
+                      enabled: true,
+
+                      focusColor: Utils.secondaryColor,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
+                      hintText: 'User ID',
+                      hintStyle: TextStyle(color: Utils.secondaryColor.withOpacity(0.7),),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                        borderSide: BorderSide(color: Utils.logoColor),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                        borderSide: BorderSide(color: Utils.secondaryColor),
+                      ),
                     ),
                   ),
                 ),
@@ -74,54 +110,46 @@ class _LoginScreenState extends State<LoginScreen> {
                     autofocus: true,
                     obscureText: visiblePassword,
                     decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Utils.primaryColor.withOpacity(1),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
-                        hintText: 'User ID',
-                        hintStyle: TextStyle(color: Colors.grey.shade500),
-                        enabledBorder: OutlineInputBorder()),
+                      fillColor: Utils.primaryColor,
+                      enabled: true,
+
+                      focusColor: Utils.secondaryColor,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
+                      hintText: 'Password',
+                      hintStyle: TextStyle(color: Utils.secondaryColor.withOpacity(0.7),),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                        borderSide: BorderSide(color: Utils.logoColor),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(28.r),
+                        borderSide: BorderSide(color: Utils.secondaryColor),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: visiblePassword
+                            ? Icon(
+                                Icons.visibility_off_outlined,
+                                color: Utils.secondaryColor.withOpacity(0.8),
+                              )
+                            : Icon(
+                                Icons.remove_red_eye,
+                                color: Utils.secondaryColor.withOpacity(0.8),
+                              ),
+                        onPressed: () {
+                          setState(() {
+                            visiblePassword = !visiblePassword;
+                          });
+                        },
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
-                  height: 30.h,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.19,
-                  child: TextField(
-                    onSubmitted: (value) {},
-                    controller: ipAdderss,
-                    autofocus: true,
-                    obscureText: visiblePassword,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Utils.primaryColor.withOpacity(1),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 30),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            Icons.remove_red_eye,
-                            color: visiblePassword
-                                ? Colors.grey.shade500
-                                : Colors.amber,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              visiblePassword = !visiblePassword;
-                            });
-                          },
-                        ),
-                        hintText: 'Password',
-                        hintStyle: TextStyle(color: Colors.grey.shade500),
-                        enabledBorder: OutlineInputBorder()),
-                  ),
-                ),
-                SizedBox(
-                  height: 30.h,
+                  height: 50.h,
                 ),
                 isLoading
                     ? const Center(
@@ -129,54 +157,30 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.green,
                         ),
                       )
-                    :
-                    // : ElevatedButton(
-                    //     onPressed: () async {
-                    //       Navigator.push(
-                    //           context,
-                    //           MaterialPageRoute(
-                    //             builder: (context) => ActionPanel(),
-                    //           ));
-                    //     },
-                    //     style: ButtonStyle(
-                    //       backgroundColor:
-                    //           WidgetStateProperty.resolveWith<Color>(
-                    //               (Set<WidgetState> states) =>
-                    //                   ipAdderss.text.isEmpty
-                    //                       ? Colors.grey
-                    //                       : Colors.green),
-                    //     ),
-                    //     child: Text(
-                    //       'Log In',
-                    //       style: TextStyle(
-                    //           fontSize: 18,
-                    //           color: ipAdderss.text.isEmpty
-                    //               ? Colors.white.withOpacity(.8)
-                    //               : Colors.white),
-                    //     ),
-                    //   ),
-                    Container(
-                        padding: EdgeInsets.all(8.h),
-                        width: 550.w,
-                        height: 100.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(28.r),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ActionPanel(),
-                              ),
-                            );
-                          },
+                    : InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ActionPanel(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          //padding: EdgeInsets.all(8.h),
+                          width: MediaQuery.of(context).size.width/2,
+                          height: 130.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(28.r),
+                          ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(28.r),
                             child: Stack(
                               children: [
                                 Positioned.fill(
                                   child: Container(
+                                    width: 1000.w,
+                                    height: 100.h,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                           width: 2.w,
@@ -212,19 +216,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 Center(
                                   child: Text(
-                                    'Log In',
+                                    'Login',
                                     style: TextStyle(
-                                        fontSize: 18,
+                                        letterSpacing: 1,
+                                        fontSize: 60.sp,
+                                        fontWeight: FontWeight.bold,
                                         color: ipAdderss.text.isEmpty
-                                            ? Colors.white.withOpacity(.8)
-                                            : Colors.white),
+                                            ? Colors.black.withOpacity(.8)
+                                            : Colors.black),
                                   ),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                      )
+                      ),
               ],
             ),
           ),
