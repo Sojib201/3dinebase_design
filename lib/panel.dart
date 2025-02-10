@@ -50,6 +50,60 @@ class _ActionPanelState extends State<ActionPanel> {
     "Rooftop",
   ];
 
+  List<DeliveryCollectionWidget> deliveryList = [
+    DeliveryCollectionWidget(
+      icon: Icons.directions_bike_sharp,
+      title: "John Doe",
+      number: "123456789",
+      onTap: () {},
+    ),
+    DeliveryCollectionWidget(
+      icon: Icons.directions_bike_sharp,
+      number: "987654321",
+      onTap: () {},
+      title: '',
+    ),
+    DeliveryCollectionWidget(
+      icon: Icons.directions_bike_sharp,
+      title: "Sarah Smith",
+      number: "555666777",
+      onTap: () {},
+    ),
+    DeliveryCollectionWidget(
+      icon:Icons.directions_bike_sharp,
+      number: "333222111",
+      onTap: () {},
+      title: '',
+    ),
+  ];
+
+  List<DeliveryCollectionWidget> CollectionList = [
+    DeliveryCollectionWidget(
+      icon: Icons.shopping_cart_rounded,
+      title: "John Doe",
+      number: "123456789",
+      onTap: () {},
+    ),
+    DeliveryCollectionWidget(
+      icon: Icons.shopping_cart_rounded,
+      number: "987654321",
+      onTap: () {},
+      title: '',
+    ),
+    DeliveryCollectionWidget(
+      icon: Icons.shopping_cart_rounded,
+      title: "Sarah Smith",
+      number: "555666777",
+      onTap: () {},
+    ),
+    DeliveryCollectionWidget(
+      icon:Icons.shopping_cart_rounded,
+      number: "333222111",
+      onTap: () {},
+      title: '',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,31 +112,27 @@ class _ActionPanelState extends State<ActionPanel> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding:  EdgeInsets.all(24.w),
               child: Container(
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.symmetric(vertical: 16.h),
                 width: double.infinity,
-                //height: 65,
+                height: 135.h,
                 //height: MediaQuery.of(context).size.height/10,
                 decoration: BoxDecoration(
                   color: Utils.primaryColor,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(14),
+                    Radius.circular(28.r),
                   ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Icon(
-                    //   Icons.menu,
-                    //   size: 34,
-                    //   color: Utils.secondaryColor,
-                    // ),
+
                     IconButton(
                       icon: Icon(
                         Icons.menu,
-                        size: 34,
+                        size: 74.h,
                       ),
                       color: Utils.secondaryColor,
                       onPressed: () {},
@@ -90,54 +140,52 @@ class _ActionPanelState extends State<ActionPanel> {
                     Text(
                       'Action Panel',
                       style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 60.sp,
                           fontWeight: FontWeight.bold,
                           color: Utils.secondaryColor),
                     ),
                     IconButton(
                       icon: Icon(
                         Icons.home,
-                        size: 34,
+                        size: 74.h,
                       ),
                       color: Utils.secondaryColor,
                       onPressed: () {},
                     ),
-                    // Icon(
-                    //   Icons.home,
-                    //   size: 34,
-                    //   color: Utils.secondaryColor,
-                    // ),
+
                   ],
                 ),
               ),
             ),
             SizedBox(
-              height: 3,
+              height: 1.h,
             ),
             Expanded(
+              flex: 9,
               child: Container(
-                height: MediaQuery.of(context).size.height / 1.18,
+                //height: MediaQuery.of(context).size.height / 1.18,
+                //height: 400.h,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       flex: 8,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 12),
+                        padding:  EdgeInsets.only(left: 24.w,bottom: 24.h),
                         child: Container(
-                          height: MediaQuery.of(context).size.height / 1.21,
+                          //height: MediaQuery.of(context).size.height / 1.21,
                           decoration: BoxDecoration(
                             color: Utils.primaryColor,
                             borderRadius: BorderRadius.all(
-                              Radius.circular(15),
+                              Radius.circular(28.r),
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(16),
+                            padding:  EdgeInsets.all(16.h),
                             child: Column(
                               children: [
                                 Expanded(
-                                  flex: 1,
+                                  //flex: 1,
                                   // child: ListView.builder(
                                   //   scrollDirection: Axis.horizontal,
                                   //   itemCount: 10,
@@ -324,15 +372,15 @@ class _ActionPanelState extends State<ActionPanel> {
                                                 });
                                               },
                                             ),
-                                            const SizedBox(
-                                              width: 18,
+                                             SizedBox(
+                                              width: 33.w,
                                             ),
                                           ],
                                         );
                                       }),
                                 ),
-                                const SizedBox(
-                                  height: 12,
+                                 SizedBox(
+                                  height: 26.h,
                                 ),
                                 // Expanded(
                                 //   flex: 8,
@@ -361,7 +409,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                   flex: 8,
                                   child: GridView.builder(
                                     gridDelegate:
-                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                         SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 4,
                                       childAspectRatio: 1.35,
                                       crossAxisSpacing: 28,
@@ -401,13 +449,14 @@ class _ActionPanelState extends State<ActionPanel> {
                                   ),
                                 ),
 
-                                const SizedBox(
-                                  height: 4,
-                                ),
+                                //  SizedBox(
+                                //   height: 1.h,
+                                // ),
                                 Expanded(
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       // Container(
                                       //   height: 41.9,
@@ -471,9 +520,9 @@ class _ActionPanelState extends State<ActionPanel> {
                                         text: 'Free',
                                         seatNumber: '4',
                                       ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
+                                      //  SizedBox(
+                                      //   width: 10,
+                                      // ),
                                       // Container(
                                       //   height: 41.9,
                                       //   width: 181.97,
@@ -536,9 +585,9 @@ class _ActionPanelState extends State<ActionPanel> {
                                         text: 'Reserved',
                                         seatNumber: '5',
                                       ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
+                                      //  SizedBox(
+                                      //   width: 10,
+                                      // ),
                                       // Container(
                                       //   height: 41.9,
                                       //   width: 181.97,
@@ -611,349 +660,419 @@ class _ActionPanelState extends State<ActionPanel> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 12,
+                     SizedBox(
+                      width: 20.w,
                     ),
                     Expanded(
                       flex: 3,
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 12),
+                        padding:  EdgeInsets.only(right: 24.w,bottom: 24.h),
                         child: Column(
                           children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height / 3.2,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(14),
+                            Expanded(
+                              flex:3,
+                              child: Container(
+
+                                //height: MediaQuery.of(context).size.height / 3.2,
+                                //width: MediaQuery.of(context).size.width,
+                                decoration:  BoxDecoration(
+                                  color: Utils.primaryColor,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(28.r),
+                                  ),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    // SizedBox(
+                                    //   height: 20.h,
+                                    // ),
+                                    Padding(
+                                      padding:  EdgeInsets.only(top: 10.h,bottom: 5.h),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 20.w),
+                                            height: 95.h,
+                                            //width: 240.w,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  width: 1.5.w,
+                                                  color: Utils.secondaryColor),
+                                              color: Utils.primaryColor,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(28.r)),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Jan 28, 2025',
+                                                style: Utils.heading2,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 24.w,
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 22.w),
+                                            height: 95.h,
+                                            //width: 240.w,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  width: 1.5.w,
+                                                  color: Utils.secondaryColor),
+                                              color: Utils.primaryColor,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(28.r)),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                '12.17 PM',
+                                                style: Utils.heading2,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+
+                                    //  SizedBox(
+                                    //   height: 20.h,
+                                    // ),
+
+                                    Expanded(
+                                      //flex: 1,
+                                      child: GestureDetector(
+                                          onTap: () {
+                                            print('sdfgsgsd');
+                                          },
+                                          child: CustomButton(
+                                              icon: Icons.notifications,
+                                              text: 'Notifications')),
+                                    ),
+
+                                    // SizedBox(
+                                    //   height: 20.h,
+                                    // ),
+                                    Expanded(
+                                      //flex: 1,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          print('sdfgsgsd');
+                                        },
+                                        child: CustomButton(
+                                          text: 'New Order',
+                                          icon: Icons.add_circle_outline,
+                                        ),
+                                      ),
+                                    ),
+                                    // GestureDetector(
+                                    //   onTap: () {
+                                    //     print('sdfgsgsd');
+                                    //   },
+                                    //   child: Container(
+                                    //     width: 500.w,
+                                    //     height: 100.h,
+                                    //     decoration: BoxDecoration(
+                                    //       borderRadius: BorderRadius.all(
+                                    //           Radius.circular(28.r)),
+                                    //     ),
+                                    //     child: ClipRRect(
+                                    //       borderRadius: BorderRadius.all(
+                                    //           Radius.circular(28.r)),
+                                    //       child: Container(
+                                    //         decoration: BoxDecoration(),
+                                    //         child: Stack(
+                                    //           children: [
+                                    //             Positioned.fill(
+                                    //               child: Container(
+                                    //                 decoration: BoxDecoration(
+                                    //                   border: Border.all(
+                                    //                       width: 0.9.w,
+                                    //                       color: Color(
+                                    //                           0xffff50525F)),
+                                    //                   color: Colors.transparent,
+                                    //                   borderRadius:
+                                    //                       BorderRadius.all(
+                                    //                           Radius.circular(
+                                    //                               28.r)),
+                                    //                   boxShadow: [
+                                    //                     BoxShadow(
+                                    //                       color: Utils
+                                    //                           .secondaryColor
+                                    //                           .withOpacity(0.6),
+                                    //                       blurRadius: 10,
+                                    //                       spreadRadius: 20,
+                                    //                       offset:
+                                    //                           const Offset(0, 0),
+                                    //                     ),
+                                    //                     BoxShadow(
+                                    //                       color: Utils
+                                    //                           .primaryColor
+                                    //                           .withOpacity(0.45),
+                                    //                       blurRadius: 8,
+                                    //                       spreadRadius: -30,
+                                    //                       offset:
+                                    //                           const Offset(0, 0),
+                                    //                     ),
+                                    //                     BoxShadow(
+                                    //                       color: Utils
+                                    //                           .primaryColor
+                                    //                           .withOpacity(1),
+                                    //                       blurRadius: 20,
+                                    //                       spreadRadius: -10,
+                                    //                       offset:
+                                    //                           const Offset(0, 2),
+                                    //                     ),
+                                    //                   ],
+                                    //                 ),
+                                    //               ),
+                                    //             ),
+                                    //             Padding(
+                                    //               padding: EdgeInsets.symmetric(
+                                    //                   horizontal: 40.w),
+                                    //               child: Row(
+                                    //                 children: [
+                                    //                   Padding(
+                                    //                     padding:
+                                    //                         EdgeInsets.symmetric(
+                                    //                             vertical: 12.h),
+                                    //                     child: Icon(
+                                    //                       Icons
+                                    //                           .add_circle_outline,
+                                    //                       size: 65.r,
+                                    //                       color: Utils.black,
+                                    //                     ),
+                                    //                   ),
+                                    //                   SizedBox(width: 60.w),
+                                    //                   Padding(
+                                    //                     padding:
+                                    //                         EdgeInsets.symmetric(
+                                    //                             vertical: 20.h),
+                                    //                     child: Text(
+                                    //                       'New Order',
+                                    //                       textAlign:
+                                    //                           TextAlign.center,
+                                    //                       style: Utils.heading4,
+                                    //                     ),
+                                    //                   ),
+                                    //                 ],
+                                    //               ),
+                                    //             ),
+                                    //           ],
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    // ),
+
+                                    // SizedBox(
+                                    //   height: 20.h,
+                                    // ),
+                                    Expanded(
+                                      //flex: 1,
+                                      child: CustomButton(
+                                          icon: null, text: 'Number Not Found'),
+                                    ),
+                                    // Container(
+                                    //   width: 500.w,
+                                    //   height: 100.h,
+                                    //   decoration: BoxDecoration(
+                                    //     borderRadius: BorderRadius.all(
+                                    //         Radius.circular(28.r)),
+                                    //   ),
+                                    //   child: ClipRRect(
+                                    //     borderRadius: BorderRadius.all(
+                                    //         Radius.circular(28.r)),
+                                    //     child: Container(
+                                    //       decoration: BoxDecoration(),
+                                    //       child: Stack(
+                                    //         children: [
+                                    //           Positioned.fill(
+                                    //             child: Container(
+                                    //               decoration: BoxDecoration(
+                                    //                 border: Border.all(
+                                    //                     width: 0.9.w,
+                                    //                     color:
+                                    //                         Color(0xffff50525F)),
+                                    //                 color: Colors.transparent,
+                                    //                 borderRadius:
+                                    //                     BorderRadius.all(
+                                    //                         Radius.circular(
+                                    //                             28.r)),
+                                    //                 boxShadow: [
+                                    //                   BoxShadow(
+                                    //                     color: Utils
+                                    //                         .secondaryColor
+                                    //                         .withOpacity(0.6),
+                                    //                     blurRadius: 10,
+                                    //                     spreadRadius: 20,
+                                    //                     offset:
+                                    //                         const Offset(0, 0),
+                                    //                   ),
+                                    //                   BoxShadow(
+                                    //                     color: Utils.primaryColor
+                                    //                         .withOpacity(0.45),
+                                    //                     blurRadius: 8,
+                                    //                     spreadRadius: -30,
+                                    //                     offset:
+                                    //                         const Offset(0, 0),
+                                    //                   ),
+                                    //                   BoxShadow(
+                                    //                     color: Utils.primaryColor
+                                    //                         .withOpacity(1),
+                                    //                     blurRadius: 20,
+                                    //                     spreadRadius: -10,
+                                    //                     offset:
+                                    //                         const Offset(0, 2),
+                                    //                   ),
+                                    //                 ],
+                                    //               ),
+                                    //             ),
+                                    //           ),
+                                    //           Center(
+                                    //             child: Text(
+                                    //               'Number Not Found',
+                                    //               textAlign: TextAlign.center,
+                                    //               style: Utils.heading4,
+                                    //             ),
+                                    //           ),
+                                    //         ],
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    // ),
+                                  ],
                                 ),
                               ),
-                              child: Column(
+                            ),
+                             SizedBox(
+                              height: 20.h ,
+                            ),
+                            Expanded(
+                              flex: 5,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  SizedBox(
-                                    height: 16.h,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 12.w),
-                                        height: 100.h,
-                                        //width: 240.w,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Utils.secondaryColor),
-                                          color: Utils.primaryColor,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(28.r)),
+                                  Expanded(
+                                    //flex: 2,
+                                    child: Container(
+                                      // height:
+                                      //     MediaQuery.of(context).size.height / 2,
+                                      //width: MediaQuery.of(context).size.width / 8,
+                                      decoration:  BoxDecoration(
+                                        color: Utils.primaryColor,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(28.r),
                                         ),
-                                        child: Center(
-                                          child: Text(
-                                            'Jan 28, 2025',
-                                            style: Utils.heading2,
+                                      ),
+                                      child:  Column(
+                                        children: [
+                                          const customTitle(text: 'Delivery',),
+                                          SizedBox(height: 20.h,),
+                                          // DeliveryCollectionWidget(
+                                          //   onTap: () {},
+                                          //   icon: Icons.directions_bike_sharp,
+                                          //   title: 'Hasan',
+                                          //   number: '0123542121',
+                                          // ),
+                                          // SizedBox(height: 18.h,),
+                                          //
+                                          // DeliveryCollectionWidget(
+                                          //   onTap: () {},
+                                          //   icon: Icons.directions_bike_sharp,
+                                          //   title: '',
+                                          //   number: '0123542121',
+                                          // ),
+                                          Expanded(
+                                            child: ListView.builder(
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: deliveryList.length,
+                                              itemBuilder: (context, index) {
+                                                final item = deliveryList[index];
+                                                return Column(
+                                                  children:[
+                                                  DeliveryCollectionWidget(
+                                                    onTap: () {},
+                                                    icon: item.icon,
+                                                    title: item.title,
+                                                    number: item.number,
+                                                  ),
+                                                    SizedBox(height: 40.h,),
+                                                  ]
+                                                );
+                                              },
+                                            ),
                                           ),
-                                        ),
+                                        ],
                                       ),
-                                      SizedBox(
-                                        width: 24.w,
-                                      ),
-                                      Container(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 12.w),
-                                        height: 100.h,
-                                        //width: 240.w,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Utils.secondaryColor),
-                                          color: Utils.primaryColor,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(28.r)),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            '12.17 PM',
-                                            style: Utils.heading2,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
 
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
 
-                                  GestureDetector(
-                                      onTap: () {
-                                        print('sdfgsgsd');
-                                      },
-                                      child: CustomButton(
-                                          icon: Icons.notifications,
-                                          text: 'Notifications')),
-
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      print('sdfgsgsd');
-                                    },
-                                    child: CustomButton(
-                                      text: 'New Order',
-                                      icon: Icons.add_circle_outline,
                                     ),
                                   ),
-                                  // GestureDetector(
-                                  //   onTap: () {
-                                  //     print('sdfgsgsd');
-                                  //   },
-                                  //   child: Container(
-                                  //     width: 500.w,
-                                  //     height: 100.h,
-                                  //     decoration: BoxDecoration(
-                                  //       borderRadius: BorderRadius.all(
-                                  //           Radius.circular(28.r)),
-                                  //     ),
-                                  //     child: ClipRRect(
-                                  //       borderRadius: BorderRadius.all(
-                                  //           Radius.circular(28.r)),
-                                  //       child: Container(
-                                  //         decoration: BoxDecoration(),
-                                  //         child: Stack(
-                                  //           children: [
-                                  //             Positioned.fill(
-                                  //               child: Container(
-                                  //                 decoration: BoxDecoration(
-                                  //                   border: Border.all(
-                                  //                       width: 0.9.w,
-                                  //                       color: Color(
-                                  //                           0xffff50525F)),
-                                  //                   color: Colors.transparent,
-                                  //                   borderRadius:
-                                  //                       BorderRadius.all(
-                                  //                           Radius.circular(
-                                  //                               28.r)),
-                                  //                   boxShadow: [
-                                  //                     BoxShadow(
-                                  //                       color: Utils
-                                  //                           .secondaryColor
-                                  //                           .withOpacity(0.6),
-                                  //                       blurRadius: 10,
-                                  //                       spreadRadius: 20,
-                                  //                       offset:
-                                  //                           const Offset(0, 0),
-                                  //                     ),
-                                  //                     BoxShadow(
-                                  //                       color: Utils
-                                  //                           .primaryColor
-                                  //                           .withOpacity(0.45),
-                                  //                       blurRadius: 8,
-                                  //                       spreadRadius: -30,
-                                  //                       offset:
-                                  //                           const Offset(0, 0),
-                                  //                     ),
-                                  //                     BoxShadow(
-                                  //                       color: Utils
-                                  //                           .primaryColor
-                                  //                           .withOpacity(1),
-                                  //                       blurRadius: 20,
-                                  //                       spreadRadius: -10,
-                                  //                       offset:
-                                  //                           const Offset(0, 2),
-                                  //                     ),
-                                  //                   ],
-                                  //                 ),
-                                  //               ),
-                                  //             ),
-                                  //             Padding(
-                                  //               padding: EdgeInsets.symmetric(
-                                  //                   horizontal: 40.w),
-                                  //               child: Row(
-                                  //                 children: [
-                                  //                   Padding(
-                                  //                     padding:
-                                  //                         EdgeInsets.symmetric(
-                                  //                             vertical: 12.h),
-                                  //                     child: Icon(
-                                  //                       Icons
-                                  //                           .add_circle_outline,
-                                  //                       size: 65.r,
-                                  //                       color: Utils.black,
-                                  //                     ),
-                                  //                   ),
-                                  //                   SizedBox(width: 60.w),
-                                  //                   Padding(
-                                  //                     padding:
-                                  //                         EdgeInsets.symmetric(
-                                  //                             vertical: 20.h),
-                                  //                     child: Text(
-                                  //                       'New Order',
-                                  //                       textAlign:
-                                  //                           TextAlign.center,
-                                  //                       style: Utils.heading4,
-                                  //                     ),
-                                  //                   ),
-                                  //                 ],
-                                  //               ),
-                                  //             ),
-                                  //           ],
-                                  //         ),
-                                  //       ),
-                                  //     ),
-                                  //   ),
-                                  // ),
+                                  SizedBox(width: 20.w,),
+                                  Expanded(
+                                    //flex: 2,
+                                    child: Container(
+                                      // height:
+                                      //     MediaQuery.of(context).size.height / 2,
+                                      //width: MediaQuery.of(context).size.width / 8,
+                                      decoration:  BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(28.r),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          customTitle(text: 'Collection'),
+                                          SizedBox(height: 20.h,),
 
-                                  SizedBox(
-                                    height: 12,
+                                          // DeliveryCollectionWidget(
+                                          //   onTap: () {},
+                                          //   icon: Icons.shopping_cart_rounded,
+                                          //   title: 'Hasan',
+                                          //   number: '0123542121',
+                                          // ),
+                                          // SizedBox(height: 18.h,),
+                                          //
+                                          // DeliveryCollectionWidget(
+                                          //   onTap: () {},
+                                          //   icon: Icons.shopping_cart_rounded,
+                                          //   title: 'Hasan',
+                                          //   number: '0123542121',
+                                          // ),
+
+
+                                          Expanded(
+                                            child: ListView.builder(
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: CollectionList.length,
+                                              itemBuilder: (context, index) {
+                                                final item = CollectionList[index];
+                                                return Column(
+                                                    children:[
+                                                      DeliveryCollectionWidget(
+                                                        onTap: () {},
+                                                        icon: item.icon,
+                                                        title: item.title,
+                                                        number: item.number,
+                                                      ),
+                                                      SizedBox(height: 40.h,),
+                                                    ]
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
-                                  CustomButton(
-                                      icon: null, text: 'Number Not Found'),
-                                  // Container(
-                                  //   width: 500.w,
-                                  //   height: 100.h,
-                                  //   decoration: BoxDecoration(
-                                  //     borderRadius: BorderRadius.all(
-                                  //         Radius.circular(28.r)),
-                                  //   ),
-                                  //   child: ClipRRect(
-                                  //     borderRadius: BorderRadius.all(
-                                  //         Radius.circular(28.r)),
-                                  //     child: Container(
-                                  //       decoration: BoxDecoration(),
-                                  //       child: Stack(
-                                  //         children: [
-                                  //           Positioned.fill(
-                                  //             child: Container(
-                                  //               decoration: BoxDecoration(
-                                  //                 border: Border.all(
-                                  //                     width: 0.9.w,
-                                  //                     color:
-                                  //                         Color(0xffff50525F)),
-                                  //                 color: Colors.transparent,
-                                  //                 borderRadius:
-                                  //                     BorderRadius.all(
-                                  //                         Radius.circular(
-                                  //                             28.r)),
-                                  //                 boxShadow: [
-                                  //                   BoxShadow(
-                                  //                     color: Utils
-                                  //                         .secondaryColor
-                                  //                         .withOpacity(0.6),
-                                  //                     blurRadius: 10,
-                                  //                     spreadRadius: 20,
-                                  //                     offset:
-                                  //                         const Offset(0, 0),
-                                  //                   ),
-                                  //                   BoxShadow(
-                                  //                     color: Utils.primaryColor
-                                  //                         .withOpacity(0.45),
-                                  //                     blurRadius: 8,
-                                  //                     spreadRadius: -30,
-                                  //                     offset:
-                                  //                         const Offset(0, 0),
-                                  //                   ),
-                                  //                   BoxShadow(
-                                  //                     color: Utils.primaryColor
-                                  //                         .withOpacity(1),
-                                  //                     blurRadius: 20,
-                                  //                     spreadRadius: -10,
-                                  //                     offset:
-                                  //                         const Offset(0, 2),
-                                  //                   ),
-                                  //                 ],
-                                  //               ),
-                                  //             ),
-                                  //           ),
-                                  //           Center(
-                                  //             child: Text(
-                                  //               'Number Not Found',
-                                  //               textAlign: TextAlign.center,
-                                  //               style: Utils.heading4,
-                                  //             ),
-                                  //           ),
-                                  //         ],
-                                  //       ),
-                                  //     ),
-                                  //   ),
-                                  // ),
                                 ],
                               ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  height:
-                                      MediaQuery.of(context).size.height / 2,
-                                  width: MediaQuery.of(context).size.width / 8,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(14),
-                                    ),
-                                  ),
-                                  child:  Column(
-                                    children: [
-                                      const customTitle(text: 'Delivery',),
-                                      SizedBox(height: 20.h,),
-
-                                      DeliveryCollectionWidget(
-                                        onTap: () {},
-                                        icon: Icons.directions_bike_sharp,
-                                        title: 'Hasan',
-                                        number: '0123542121',
-                                      ),
-                                      SizedBox(height: 18.h,),
-
-                                      DeliveryCollectionWidget(
-                                        onTap: () {},
-                                        icon: Icons.directions_bike_sharp,
-                                        title: '',
-                                        number: '0123542121',
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  height:
-                                      MediaQuery.of(context).size.height / 2,
-                                  width: MediaQuery.of(context).size.width / 8,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(14),
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      customTitle(text: 'Collection'),
-                                      SizedBox(height: 20.h,),
-
-                                      DeliveryCollectionWidget(
-                                        onTap: () {},
-                                        icon: Icons.shopping_cart_rounded,
-                                        title: 'Hasan',
-                                        number: '0123542121',
-                                      ),
-                                      SizedBox(height: 18.h,),
-
-                                      DeliveryCollectionWidget(
-                                        onTap: () {},
-                                        icon: Icons.shopping_cart_rounded,
-                                        title: 'Hasan',
-                                        number: '0123542121',
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
                             ),
                           ],
                         ),

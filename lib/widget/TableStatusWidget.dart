@@ -1,4 +1,6 @@
+import 'package:action_panel/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/styles.dart';
 
@@ -16,29 +18,30 @@ class TableStatusWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 41.9,
-      width: 181.97,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      height: 90.h,
+      width: 380.w,
+      padding:  EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 1,
+          width: 2.w,
           color: Utils.secondaryColor.withOpacity(.40),
         ),
         color: Utils.primaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(14)),
+        borderRadius:  BorderRadius.all(Radius.circular(28.r)),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        //mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             flex: 4,
             child: Row(
               children: [
                 CircleAvatar(
-                  radius: 7,
+                  radius: 18.r,
                   backgroundColor: color,
                 ),
-                const SizedBox(width: 10),
+                 SizedBox(width: 16.w),
                 Text(
                  text,
                   style: Utils.heading3,
@@ -51,11 +54,11 @@ class TableStatusWidget extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  height: 16,
-                  width: 1.2,
+                  height: 34.h,
+                  width: 2.4.w,
                   color: Utils.secondaryColor.withOpacity(.40),
                 ),
-                const SizedBox(width: 8),
+                 SizedBox(width: 12.w),
                 Text(
                   seatNumber,
                   style: Utils.heading3,

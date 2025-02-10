@@ -14,7 +14,7 @@ class customTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding:  EdgeInsets.all(20.w),
       child: Container(
         height: 90.h,
         width: 260.w,

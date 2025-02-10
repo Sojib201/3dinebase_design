@@ -26,11 +26,11 @@ class DeliveryCollectionWidget extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(
             horizontal: 12.w),
-        height: 240.h,
-        width: 220.w,
+        height: 279.h,
+        width: 230.w,
         decoration: BoxDecoration(
           border: Border.all(
-              width: 1,
+              width: 1.5.w,
               color: Utils.secondaryColor),
           color: Utils.primaryColor,
           borderRadius: BorderRadius.all(
@@ -40,7 +40,7 @@ class DeliveryCollectionWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon,size: 80.h,),
-            SizedBox(height: 12.h,),
+            SizedBox(height: 14.h,),
             title!=null?Text(title!):Text(''),
             title==null?SizedBox(height: 12.h,):SizedBox.shrink(),
             Text(number),

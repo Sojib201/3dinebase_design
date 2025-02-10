@@ -79,7 +79,7 @@ class TableArea extends StatelessWidget {
         height: 120.h,
         width: 350.w,
         decoration: BoxDecoration(
-          border: Border.all(width: 1, color: Utils.secondaryColor),
+          border: Border.all(width: 2.w, color: Utils.secondaryColor),
           color: isSelected ? Utils.secondaryColor : Utils.primaryColor,
           borderRadius:  BorderRadius.all(Radius.circular(30.r)),
           boxShadow: isSelected
@@ -87,7 +87,7 @@ class TableArea extends StatelessWidget {
                   BoxShadow(
                     color: Utils.secondaryColor.withOpacity(0.5),
                     blurRadius: 3,
-                    offset: const Offset(0, 2),
+                    offset:  Offset(0.w, 4.h),
                   ),
                 ]
               : [],
