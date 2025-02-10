@@ -6,17 +6,18 @@ class Utils {
   static TextStyle tableTextStyle =  TextStyle(
     fontWeight: FontWeight.bold,
     fontSize:36.sp,
+    color: Utils.secondaryColor
   );
 
   static TextStyle heading1 = TextStyle(
-    fontSize: 35.sp,
+    fontSize: 40.sp,
     fontWeight: FontWeight.bold,
     color: Utils.primaryColor,
   );
 
 
   static TextStyle heading2 = TextStyle(
-    fontSize: 35.sp,
+    fontSize: 40.sp,
     fontWeight: FontWeight.bold,
     color: Utils.secondaryColor,
   );

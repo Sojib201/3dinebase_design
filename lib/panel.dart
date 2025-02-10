@@ -708,7 +708,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                             child: Center(
                                               child: Text(
                                                 'Jan 28, 2025',
-                                                style: Utils.heading2,
+                                                style: Utils.heading3,
                                               ),
                                             ),
                                           ),
@@ -731,7 +731,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                             child: Center(
                                               child: Text(
                                                 '12.17 PM',
-                                                style: Utils.heading2,
+                                                style: Utils.heading3,
                                               ),
                                             ),
                                           ),

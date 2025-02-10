@@ -77,11 +77,11 @@ class TableArea extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 120.h,
-        width: 350.w,
+        width: 400.w,
         decoration: BoxDecoration(
           border: Border.all(width: 2.w, color: Utils.secondaryColor),
           color: isSelected ? Utils.secondaryColor : Utils.primaryColor,
-          borderRadius:  BorderRadius.all(Radius.circular(30.r)),
+          borderRadius:  BorderRadius.all(Radius.circular(40.r)),
           boxShadow: isSelected
               ? [
                   BoxShadow(
