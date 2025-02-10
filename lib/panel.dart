@@ -20,23 +20,22 @@ class ActionPanel extends StatefulWidget {
 
 class _ActionPanelState extends State<ActionPanel> {
   List<TableModel> tables = [
-    TableModel(name: "T1", seats: 4, status: TableStatus.available),
-    TableModel(name: "T2", seats: 2, status: TableStatus.booked),
-    TableModel(name: "T3", seats: 6, status: TableStatus.reserved),
-    TableModel(name: "T4", seats: 2, status: TableStatus.available),
-    TableModel(name: "T5", seats: 6, status: TableStatus.available),
-    TableModel(name: "T6", seats: 5, status: TableStatus.available),
-    TableModel(name: "T7", seats: 4, status: TableStatus.reserved),
-    TableModel(name: "T8", seats: 1, status: TableStatus.available),
-    TableModel(name: "T9", seats: 9, status: TableStatus.reserved),
-    TableModel(name: "T10", seats: 7, status: TableStatus.booked),
-    TableModel(name: "T11", seats: 1, status: TableStatus.available),
-    TableModel(name: "T12", seats: 2, status: TableStatus.booked),
-    TableModel(name: "T13", seats: 6, status: TableStatus.reserved),
-    TableModel(name: "T14", seats: 5, status: TableStatus.available),
-    TableModel(name: "T15", seats: 4, status: TableStatus.reserved),
-    TableModel(name: "T16", seats: 3, status: TableStatus.available),
-    TableModel(name: "T17", seats: 6, status: TableStatus.reserved),
+    TableModel(name: "Table1", seats: 4, status: TableStatus.available),
+    TableModel(name: "Table2", seats: 2, status: TableStatus.booked),
+    TableModel(name: "Table3", seats: 6, status: TableStatus.reserved),
+    TableModel(name: "Table4", seats: 2, status: TableStatus.available),
+    TableModel(name: "Table5", seats: 6, status: TableStatus.available),
+    TableModel(name: "Table6", seats: 5, status: TableStatus.available),
+    TableModel(name: "Table7", seats: 4, status: TableStatus.reserved),
+    TableModel(name: "Table8", seats: 1, status: TableStatus.available),
+    TableModel(name: "Table9", seats: 9, status: TableStatus.reserved),
+    TableModel(name: "Table10", seats: 7, status: TableStatus.booked),
+    TableModel(name: "Table11", seats: 1, status: TableStatus.available),
+    TableModel(name: "Table12", seats: 2, status: TableStatus.booked),
+    TableModel(name: "Table13", seats: 6, status: TableStatus.reserved),
+    TableModel(name: "Table14", seats: 5, status: TableStatus.available),
+    TableModel(name: "Table15", seats: 4, status: TableStatus.reserved),
+    TableModel(name: "Table16", seats: 3, status: TableStatus.available),
   ];
 
   int selectedIndex = -1;
@@ -409,9 +408,9 @@ class _ActionPanelState extends State<ActionPanel> {
                                   flex: 8,
                                   child: GridView.builder(
                                     gridDelegate:
-                                         SliverGridDelegateWithFixedCrossAxisCount(
+                                         const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 4,
-                                      childAspectRatio: 1.35,
+                                      childAspectRatio: 1.3,
                                       crossAxisSpacing: 28,
                                       mainAxisSpacing: 24,
                                     ),
@@ -672,6 +671,7 @@ class _ActionPanelState extends State<ActionPanel> {
                             Expanded(
                               flex:3,
                               child: Container(
+                                padding: EdgeInsets.only(top: 10.h,bottom: 8.h),
 
                                 //height: MediaQuery.of(context).size.height / 3.2,
                                 //width: MediaQuery.of(context).size.width,
@@ -688,7 +688,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                     //   height: 20.h,
                                     // ),
                                     Padding(
-                                      padding:  EdgeInsets.only(top: 10.h,bottom: 5.h),
+                                      padding:  EdgeInsets.only(bottom: 5.h),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
@@ -754,9 +754,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                               text: 'Notifications')),
                                     ),
 
-                                    // SizedBox(
-                                    //   height: 20.h,
-                                    // ),
+
                                     Expanded(
                                       //flex: 1,
                                       child: GestureDetector(
@@ -869,9 +867,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                     //   ),
                                     // ),
 
-                                    // SizedBox(
-                                    //   height: 20.h,
-                                    // ),
+
                                     Expanded(
                                       //flex: 1,
                                       child: CustomButton(
@@ -960,9 +956,7 @@ class _ActionPanelState extends State<ActionPanel> {
                                   Expanded(
                                     //flex: 2,
                                     child: Container(
-                                      // height:
-                                      //     MediaQuery.of(context).size.height / 2,
-                                      //width: MediaQuery.of(context).size.width / 8,
+
                                       decoration:  BoxDecoration(
                                         color: Utils.primaryColor,
                                         borderRadius: BorderRadius.all(

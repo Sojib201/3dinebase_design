@@ -39,7 +39,7 @@ class TableCard extends StatelessWidget {
           //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Expanded(
-              flex: 2,
+              flex: 5,
               child: Stack(
                 children: [
                   Opacity(
@@ -64,31 +64,34 @@ class TableCard extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
             Expanded(
-              //flex: 2,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(tableName, style: Utils.tableTextStyle),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        seatNumber.toString(),
-                        style: Utils.tableTextStyle,
-                      ),
-                      SizedBox(width: 10.w),
-                      Icon(
-                        Icons.people,
-                        size: 62.h,
-                        color: Utils.secondaryColor,
-                      ),
-                    ],
-                  ),
-                ],
+              flex: 2,
+              child: Padding(
+                padding:  EdgeInsets.only(left: 10.w,right: 10.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(tableName, style: Utils.tableTextStyle),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          seatNumber.toString(),
+                          style: Utils.tableTextStyle,
+                        ),
+                        SizedBox(width: 8.w),
+                        Icon(
+                          Icons.people,
+                          size: 62.h,
+                          color: Utils.secondaryColor,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

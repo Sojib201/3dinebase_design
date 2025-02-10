@@ -19,7 +19,9 @@ class customTitle extends StatelessWidget {
         height: 90.h,
         width: 260.w,
         decoration: BoxDecoration(
-            color: Utils.heading, borderRadius: BorderRadius.circular(28.r)),
+          color: Utils.heading,
+          borderRadius: BorderRadius.circular(28.r),
+        ),
         child: Center(
             child: Text(
           text,

@@ -47,5 +47,5 @@ class Utils {
 
   static Color delivery_collectionColor = Color(0xFFFEC145);
 
-  static BorderRadius tableCardRadius = BorderRadius.circular(105.r);
+  static BorderRadius tableCardRadius = BorderRadius.circular(110.r);
 }
