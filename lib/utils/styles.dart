@@ -35,16 +35,16 @@ class Utils {
     color: Utils.black,
   );
 
-  static Color availabeTableColor = Color(0xFF49D18F);
-  static Color reservedTableColor = Color(0xFFFEC145);
+  static Color availabeTableColor = const Color(0xFF49D18F);
+  static Color reservedTableColor = const Color(0xFFFEC145);
   static Color bookedTableColor = Color(0xFFED7A08);
-  static Color primaryColor = Color(0xFFFDFEFF);
-  static Color secondaryColor = Color(0xFF50525F);
-  static Color black = Color(0xFF000000);
-  static Color heading = Color(0xFFFEC145);
-  static Color logoColor = Color(0xFF970903);
+  static Color primaryColor = const Color(0xFFFDFEFF);
+  static Color secondaryColor = const Color(0xFF50525F);
+  static Color black = const Color(0xFF000000);
+  static Color heading = const Color(0xFFFEC145);
+  static Color logoColor = const Color(0xFF7f1424);
 
-  static Color delivery_collectionColor = Color(0xFFFEC145);
+  static Color delivery_collectionColor = const Color(0xFFFEC145);
 
   static BorderRadius tableCardRadius = BorderRadius.circular(110.r);
 }
