@@ -43,6 +43,7 @@ class Utils {
   static Color black = const Color(0xFF000000);
   static Color heading = const Color(0xFFFEC145);
   static Color logoColor = const Color(0xFF7f1424);
+  static Color redColor = const Color(0xFFDC0D27);
 
   static Color delivery_collectionColor = const Color(0xFFFEC145);
 

@@ -1,4 +1,5 @@
 import 'package:action_panel/bloc/login_bloc.dart';
+import 'package:action_panel/panel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +7,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'login_screen.dart';
+import 'order_screen.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -36,8 +38,9 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: LoginScreen(),
+            //home: LoginScreen(),
             //home: ActionPanel(),
+            home: OrderScreen(),
           );
         },
       ),
