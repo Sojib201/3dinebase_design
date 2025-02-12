@@ -433,7 +433,9 @@ class _OrderScreenState extends State<OrderScreen> {
                     ),
                     Expanded(
                       flex: 3,
-                      child: Column(),
+                      child: Column(
+
+                      ),
                     )
                   ],
                 ),
