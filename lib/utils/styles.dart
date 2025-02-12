@@ -9,6 +9,30 @@ class Utils {
     color: Utils.secondaryColor
   );
 
+
+  static TextStyle itemTextStyle =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize:24.sp,
+      color: Utils.secondaryColor
+  );
+  static TextStyle itemPriceTextStyle =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize:24.sp,
+      color: Utils.redColor
+  );
+
+  static TextStyle swichButtonTextStyle1 =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize:24.sp,
+      color: Utils.black
+  );
+
+  static TextStyle swichButtonTextStyle2 =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize:24.sp,
+      color: Utils.primaryColor
+  );
+
   static TextStyle heading1 = TextStyle(
     fontSize: 40.sp,
     fontWeight: FontWeight.bold,
