@@ -47,7 +47,7 @@ class ItemWidget extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              flex: 4,
+              flex: 2,
               child: Stack(
                 children: [
                   Opacity(
@@ -74,11 +74,10 @@ class ItemWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Padding(
                 padding: EdgeInsets.only(left: 12.w,right: 1.w),
                 child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Expanded(
                       flex: 5,

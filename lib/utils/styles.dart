@@ -26,6 +26,11 @@ class Utils {
       fontSize:24.sp,
       color: Utils.black
   );
+  static TextStyle orderTextStyle =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize:32.sp,
+      color: Utils.black
+  );
 
   static TextStyle swichButtonTextStyle2 =  TextStyle(
       fontWeight: FontWeight.bold,
@@ -68,6 +73,7 @@ class Utils {
   static Color heading = const Color(0xFFFEC145);
   static Color logoColor = const Color(0xFF7f1424);
   static Color redColor = const Color(0xFFDC0D27);
+  static Color greenColor = const Color(0xFF025726);
 
   static Color delivery_collectionColor = const Color(0xFFFEC145);
 
