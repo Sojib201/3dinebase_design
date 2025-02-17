@@ -11,11 +11,10 @@ class CustomSwitchButton extends StatefulWidget {
 }
 
 class _CustomSwitchButtonState extends State<CustomSwitchButton> {
-  bool isselected=true;
+  bool isFoodBarSelected = true;
 
   @override
   Widget build(BuildContext context) {
-
     // return Padding(
     //   padding: EdgeInsets.only(top: 30.h),
     //   child: GestureDetector(
@@ -84,59 +83,58 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton> {
     //   ),
     // );
 
-    return  Padding(
+    return Padding(
       padding: EdgeInsets.only(top: 20.h),
       child: Container(
-        height: 90.h,
-        width: 350.w,
+        height: 80.h,
+        width: 300.w,
         decoration: BoxDecoration(
           color: Utils.primaryColor,
           borderRadius: BorderRadius.circular(30.r),
         ),
         child: Row(
           children: [
-
             GestureDetector(
               onTap: () {
                 setState(() {
-                  isselected = true;
+                  isFoodBarSelected = true;
                 });
               },
               child: Container(
-                height: 90.h,
-                width: 175.w,
+                height: 80.h,
+                width: 150.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30.r)),
-                  color: isselected ? Utils.redColor : Utils.primaryColor,
+                  color:
+                      isFoodBarSelected ? Utils.redColor : Utils.primaryColor,
                 ),
                 alignment: Alignment.center,
                 child: Text(
                   'Food',
-                  style: isselected
+                  style: isFoodBarSelected
                       ? Utils.swichButtonTextStyle2
                       : Utils.swichButtonTextStyle1,
                 ),
               ),
             ),
-
-            // Cuisine Button
             GestureDetector(
               onTap: () {
                 setState(() {
-                  isselected = false;
+                  isFoodBarSelected = false;
                 });
               },
               child: Container(
-                height: 90.h,
-                width: 175.w,
+                height: 80.h,
+                width: 150.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30.r)),
-                  color: isselected ? Utils.primaryColor : Utils.redColor,
+                  color:
+                      isFoodBarSelected ? Utils.primaryColor : Utils.redColor,
                 ),
                 alignment: Alignment.center,
                 child: Text(
                   'Bar',
-                  style: isselected
+                  style: isFoodBarSelected
                       ? Utils.swichButtonTextStyle1
                       : Utils.swichButtonTextStyle2,
                 ),

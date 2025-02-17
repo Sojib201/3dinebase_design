@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:action_panel/utils/image_constants.dart';
 import 'package:action_panel/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,7 +46,7 @@ class ItemWidget extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Stack(
                 children: [
                   Opacity(
@@ -74,7 +73,7 @@ class ItemWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Padding(
                 padding: EdgeInsets.only(left: 12.w,right: 1.w),
                 child: Row(

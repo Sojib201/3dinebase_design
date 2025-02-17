@@ -69,6 +69,7 @@ class Utils {
   static Color bookedTableColor = Color(0xFFED7A08);
   static Color primaryColor = const Color(0xFFFDFEFF);
   static Color secondaryColor = const Color(0xFF50525F);
+  static Color lightBlack = const Color(0xFF3F3D3E);
   static Color black = const Color(0xFF000000);
   static Color heading = const Color(0xFFFEC145);
   static Color logoColor = const Color(0xFF7f1424);
