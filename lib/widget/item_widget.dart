@@ -72,10 +72,11 @@ class ItemWidget extends StatelessWidget {
                 ],
               ),
             ),
+           // SizedBox(height: 10.h,),
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.only(left: 12.w,right: 1.w),
+                padding: EdgeInsets.only(left: 14.w,right: 1.w,top: 50.h),
                 child: Row(
                   children: [
                     Expanded(

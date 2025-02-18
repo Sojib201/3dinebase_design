@@ -155,23 +155,17 @@ class CustomButton2Widget extends StatelessWidget {
         ),
         child: icon != null
             ? Row(
-
+          mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    flex: 2,
-                    child: Icon(
-                      icon,
+                  Icon(
+                    icon,
 
-                      color: iconColor,
-                      size: 40.sp,
-                    ),
+                    color: iconColor,
+                    size: 40.sp,
                   ),
-                  Expanded(
-                    flex: 4,
-                    child: Text(
-                      label,style: textStyle,
-                    ),
-
+                  SizedBox(width: 20.w,),
+                  Text(
+                    label,style: textStyle,
                   ),
                 ],
               )

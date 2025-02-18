@@ -34,7 +34,7 @@ class _OrderScreenState extends State<OrderScreen> {
         price: 40,
         imageUrl: 'assets/hotdog.png'),
     ItemModel(itemName: 'Nachos', price: 10, imageUrl: 'assets/nachos.png'),
-    ItemModel(itemName: 'Pizza', price: 50, imageUrl: 'assets/pizza.png'),
+    ItemModel(itemName: 'Classic Smashed Cheeseburger', price: 50, imageUrl: 'assets/pizza.png'),
     ItemModel(itemName: 'Sandwich', price: 80, imageUrl: 'assets/sandwich.png'),
     ItemModel(itemName: 'Nachos', price: 60, imageUrl: 'assets/nachos.png'),
     ItemModel(
@@ -63,7 +63,7 @@ class _OrderScreenState extends State<OrderScreen> {
       imageUrl: 'assets/burger.png',
     ),
     CategoryModel(
-      categoryName: 'Pizza',
+      categoryName: 'Pizza dfg',
       imageUrl: 'assets/pizza.png',
     ),
     CategoryModel(
@@ -74,442 +74,36 @@ class _OrderScreenState extends State<OrderScreen> {
       categoryName: 'Nachos',
       imageUrl: 'assets/nachos.png',
     ),
+    CategoryModel(
+      categoryName: 'Pizza fgds',
+      imageUrl: 'assets/pizza.png',
+    ),
+    CategoryModel(
+      categoryName: 'Sandwich Sub Burger',
+      imageUrl: 'assets/sandwich.png',
+    ),
+    CategoryModel(
+      categoryName: 'Burger',
+      imageUrl: 'assets/burger.png',
+    ),
   ];
 
   TextEditingController searchController = TextEditingController();
 
   bool isFoodBarSelected = true;
   bool isCategoryCuisineselected = true;
+  int selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
     var padding = MediaQuery.of(context).padding;
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       //resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
-            // Container(
-            //   decoration: BoxDecoration(
-            //     color: Utils.secondaryColor,
-            //   ),
-            //   child: Row(
-            //     children: [
-            //       Expanded(
-            //         //flex: 1,
-            //         child: Padding(
-            //           padding: EdgeInsets.only(top: 10.h, left: 20.w),
-            //           child: Column(
-            //             crossAxisAlignment: CrossAxisAlignment.start,
-            //             children: [
-            //               Padding(
-            //                 padding: EdgeInsets.only(top: 20.h),
-            //                 child: Container(
-            //                   height: 80.h,
-            //                   width: 300.w,
-            //                   decoration: BoxDecoration(
-            //                     color: Utils.primaryColor,
-            //                     borderRadius: BorderRadius.circular(30.r),
-            //                   ),
-            //                   child: Row(
-            //                     children: [
-            //                       GestureDetector(
-            //                         onTap: () {
-            //                           setState(() {
-            //                             isFoodBarSelected = true;
-            //                           });
-            //                         },
-            //                         child: Container(
-            //                           height: 80.h,
-            //                           width: 150.w,
-            //                           decoration: BoxDecoration(
-            //                             borderRadius: BorderRadius.all(
-            //                                 Radius.circular(30.r)),
-            //                             color: isFoodBarSelected
-            //                                 ? Utils.redColor
-            //                                 : Utils.primaryColor,
-            //                           ),
-            //                           alignment: Alignment.center,
-            //                           child: Text(
-            //                             'Food',
-            //                             style: isFoodBarSelected
-            //                                 ? Utils.swichButtonTextStyle2
-            //                                 : Utils.swichButtonTextStyle1,
-            //                           ),
-            //                         ),
-            //                       ),
-            //                       GestureDetector(
-            //                         onTap: () {
-            //                           setState(() {
-            //                             isFoodBarSelected = false;
-            //                           });
-            //                         },
-            //                         child: Container(
-            //                           height: 80.h,
-            //                           width: 150.w,
-            //                           decoration: BoxDecoration(
-            //                             borderRadius: BorderRadius.all(
-            //                                 Radius.circular(30.r)),
-            //                             color: isFoodBarSelected
-            //                                 ? Utils.primaryColor
-            //                                 : Utils.redColor,
-            //                           ),
-            //                           alignment: Alignment.center,
-            //                           child: Text(
-            //                             'Bar',
-            //                             style: isFoodBarSelected
-            //                                 ? Utils.swichButtonTextStyle1
-            //                                 : Utils.swichButtonTextStyle2,
-            //                           ),
-            //                         ),
-            //                       ),
-            //                     ],
-            //                   ),
-            //                 ),
-            //               ),
-            //               Padding(
-            //                 padding: EdgeInsets.only(top: 20.h),
-            //                 child: Container(
-            //                   height: 80.h,
-            //                   width: 300.w,
-            //                   decoration: BoxDecoration(
-            //                     color: Utils.primaryColor,
-            //                     borderRadius: BorderRadius.circular(30.r),
-            //                   ),
-            //                   child: Row(
-            //                     children: [
-            //                       GestureDetector(
-            //                         onTap: () {
-            //                           setState(() {
-            //                             isCategoryCuisineselected = true;
-            //                           });
-            //                         },
-            //                         child: Container(
-            //                           height: 80.h,
-            //                           width: 150.w,
-            //                           decoration: BoxDecoration(
-            //                             borderRadius: BorderRadius.all(
-            //                                 Radius.circular(30.r)),
-            //                             color: isCategoryCuisineselected
-            //                                 ? Utils.redColor
-            //                                 : Utils.primaryColor,
-            //                           ),
-            //                           alignment: Alignment.center,
-            //                           child: Text(
-            //                             'Category',
-            //                             style: isCategoryCuisineselected
-            //                                 ? Utils.swichButtonTextStyle2
-            //                                 : Utils.swichButtonTextStyle1,
-            //                           ),
-            //                         ),
-            //                       ),
-            //
-            //                       // Cuisine Button
-            //                       GestureDetector(
-            //                         onTap: () {
-            //                           setState(() {
-            //                             isCategoryCuisineselected = false;
-            //                           });
-            //                         },
-            //                         child: Container(
-            //                           height: 80.h,
-            //                           width: 150.w,
-            //                           decoration: BoxDecoration(
-            //                             borderRadius: BorderRadius.all(
-            //                                 Radius.circular(30.r)),
-            //                             color: isCategoryCuisineselected
-            //                                 ? Utils.primaryColor
-            //                                 : Utils.redColor,
-            //                           ),
-            //                           alignment: Alignment.center,
-            //                           child: Text(
-            //                             'Cuisine',
-            //                             style: isCategoryCuisineselected
-            //                                 ? Utils.swichButtonTextStyle1
-            //                                 : Utils.swichButtonTextStyle2,
-            //                           ),
-            //                         ),
-            //                       ),
-            //                     ],
-            //                   ),
-            //                 ),
-            //               ),
-            //               SizedBox(
-            //                 height: 180.h,
-            //               ),
-            //               Expanded(
-            //                 child: Padding(
-            //                   padding: EdgeInsets.only(left: 25.w),
-            //                   child: Expanded(
-            //                     child: ListView.builder(
-            //                       scrollDirection: Axis.vertical,
-            //                       itemCount: categoryItem.length,
-            //                       itemBuilder: (context, index) {
-            //                         CategoryModel categoryModel =
-            //                             categoryItem[index];
-            //                         return CategoryitemWidget(
-            //                           categoryItemName:
-            //                               categoryModel.categoryName,
-            //                           imageUrl: categoryModel.imageUrl,
-            //                         );
-            //                       },
-            //                     ),
-            //                   ),
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //       SizedBox(
-            //         width: 150.w,
-            //       ),
-            //       // Expanded(
-            //       //   flex: 2,
-            //       //   child: Padding(
-            //       //     padding:  EdgeInsets.only(top: 20.h,right: 25.w),
-            //       //     child: Column(
-            //       //       children: [
-            //       //         Row(
-            //       //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       //           children: [
-            //       //             Image.asset(
-            //       //               'assets/logo.png',
-            //       //               fit: BoxFit.contain,
-            //       //             ),
-            //       //             Column(
-            //       //               children: [
-            //       //                 Container(
-            //       //                   padding:EdgeInsets.all(6.w),
-            //       //
-            //       //                   decoration: BoxDecoration(
-            //       //                     borderRadius:BorderRadius.circular(25.r),
-            //       //                       border: Border.all(
-            //       //                     color: Utils.primaryColor,
-            //       //                     ),
-            //       //                   ),
-            //       //                   child: Row(
-            //       //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       //                     children: [
-            //       //                       Expanded(
-            //       //                         child: Text(
-            //       //                           'Jahidul Islam Maruf',
-            //       //                           style: TextStyle(
-            //       //                               color: Utils.primaryColor,
-            //       //                               fontSize: 40.sp,
-            //       //                               fontWeight: FontWeight.bold),
-            //       //                         ),
-            //       //                       ),
-            //       //                       Container(
-            //       //                         height: 90.h,
-            //       //                         width: 90.w,
-            //       //                         decoration: BoxDecoration(
-            //       //                           borderRadius:
-            //       //                               BorderRadius.circular(100.r),
-            //       //                           color: Colors.grey,
-            //       //                         ),
-            //       //                         child: Center(
-            //       //                           child: Icon(Icons.person,
-            //       //                               color: Utils.primaryColor,
-            //       //                               size: 60.h),
-            //       //                         ),
-            //       //                       )
-            //       //                     ],
-            //       //                   ),
-            //       //                 ),
-            //       //                 SizedBox(height: 20.h,),
-            //       //                 Container(
-            //       //                   decoration: BoxDecoration(
-            //       //                     borderRadius:BorderRadius.circular(25.r),
-            //       //                     border: Border.all(
-            //       //                       color: Utils.primaryColor,
-            //       //                     ),
-            //       //                   ),
-            //       //                   child: Row(
-            //       //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       //                     children: [
-            //       //                       Text(
-            //       //                         'Jahidul Islam Maruf',
-            //       //                         style: TextStyle(
-            //       //                             color: Utils.primaryColor,
-            //       //                             fontSize: 46.sp,
-            //       //                             fontWeight: FontWeight.bold),
-            //       //                       ),
-            //       //                       Container(
-            //       //                         height: 90.h,
-            //       //                         width: 90.w,
-            //       //                         decoration: BoxDecoration(
-            //       //                           borderRadius:
-            //       //                           BorderRadius.circular(100.r),
-            //       //                           color: Colors.grey,
-            //       //                         ),
-            //       //                         child: Center(
-            //       //                           child: Icon(Icons.person,
-            //       //                               color: Utils.primaryColor,
-            //       //                               size: 60.h),
-            //       //                         ),
-            //       //                       )
-            //       //                     ],
-            //       //                   ),
-            //       //                 ),
-            //       //               ],
-            //       //             )
-            //       //           ],
-            //       //         ),
-            //       //       ],
-            //       //     ),
-            //       //   ),
-            //       // ),
-            //       Expanded(
-            //         flex: 2,
-            //         child: Padding(
-            //           padding: EdgeInsets.only(top: 20.h, right: 25.w),
-            //           child: Column(
-            //             children: [
-            //               Row(
-            //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                 children: [
-            //                   Image.asset(
-            //                     'assets/logo.png',
-            //                     fit: BoxFit.contain,
-            //                   ),
-            //                   Column(
-            //                     children: [
-            //                       Container(
-            //                         width: 620.w,
-            //                         height: 100.h,
-            //                         padding: EdgeInsets.all(6.w),
-            //                         decoration: BoxDecoration(
-            //                           borderRadius: BorderRadius.circular(25.r),
-            //                           border: Border.all(
-            //                             color: Utils.primaryColor,
-            //                             width: 0.7.w,
-            //                           ),
-            //                         ),
-            //                         child: Row(
-            //                           mainAxisAlignment:
-            //                               MainAxisAlignment.spaceEvenly,
-            //                           children: [
-            //                             Text(
-            //                               'Jahidul Islam Maruf',
-            //                               style: TextStyle(
-            //                                   color: Utils.primaryColor,
-            //                                   fontSize: 40.sp,
-            //                                   letterSpacing: 0.8,
-            //                                   fontWeight: FontWeight.bold),
-            //                             ),
-            //                             CircleAvatar(
-            //                               backgroundColor: Colors.grey,
-            //                               child: Icon(
-            //                                 Icons.person,
-            //                                 size: 65.h,
-            //                                 color: Utils.primaryColor,
-            //                               ),
-            //                             ),
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       SizedBox(height: 15.h),
-            //                       Row(
-            //                         //mainAxisAlignment: MainAxisAlignment.center,
-            //                         children: [
-            //                           Container(
-            //                             width: 300.w,
-            //                             height: 85.h,
-            //                             padding: EdgeInsets.all(6.w),
-            //                             decoration: BoxDecoration(
-            //                               borderRadius:
-            //                                   BorderRadius.circular(25.r),
-            //                               border: Border.all(
-            //                                 color: Utils.primaryColor,
-            //                                 width: 0.7.w,
-            //                               ),
-            //                             ),
-            //                             child: Row(
-            //                               mainAxisAlignment:
-            //                                   MainAxisAlignment.spaceBetween,
-            //                               children: [
-            //                                 Text(
-            //                                   'Table No: ',
-            //                                   style: TextStyle(
-            //                                       color: Utils.primaryColor,
-            //                                       fontSize: 26.sp,
-            //                                       fontWeight: FontWeight.bold),
-            //                                 ),
-            //                                 CircleAvatar(
-            //                                   backgroundColor: Utils.lightBlack,
-            //                                   child: Center(
-            //                                     child: Text(
-            //                                       '10',
-            //                                       style: TextStyle(
-            //                                           color: Utils.primaryColor,
-            //                                           fontWeight:
-            //                                               FontWeight.bold,
-            //                                           fontSize: 28.sp),
-            //                                     ),
-            //                                   ),
-            //                                 ),
-            //                               ],
-            //                             ),
-            //                           ),
-            //                           SizedBox(
-            //                             width: 20.w,
-            //                           ),
-            //                           Container(
-            //                             width: 300.w,
-            //                             height: 85.h,
-            //                             padding: EdgeInsets.all(6.w),
-            //                             decoration: BoxDecoration(
-            //                               borderRadius:
-            //                                   BorderRadius.circular(25.r),
-            //                               border: Border.all(
-            //                                 color: Utils.primaryColor,
-            //                                 width: 0.7.w,
-            //                               ),
-            //                             ),
-            //                             child: Row(
-            //                               mainAxisAlignment:
-            //                                   MainAxisAlignment.spaceEvenly,
-            //                               children: [
-            //                                 Text(
-            //                                   'Table Person: ',
-            //                                   style: TextStyle(
-            //                                       color: Utils.primaryColor,
-            //                                       fontSize: 26.sp,
-            //                                       fontWeight: FontWeight.bold),
-            //                                 ),
-            //                                 CircleAvatar(
-            //                                   backgroundColor: Utils.lightBlack,
-            //                                   child: Center(
-            //                                     child: Text(
-            //                                       '10',
-            //                                       style: TextStyle(
-            //                                           color: Utils.primaryColor,
-            //                                           fontWeight:
-            //                                               FontWeight.bold,
-            //                                           fontSize: 28.sp),
-            //                                     ),
-            //                                   ),
-            //                                 ),
-            //                               ],
-            //                             ),
-            //                           ),
-            //                         ],
-            //                       ),
-            //                     ],
-            //                   )
-            //                 ],
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-
 
             Container(
               decoration: BoxDecoration(
@@ -522,8 +116,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   Expanded(
                     flex: 1,
                     child: Container(
-
-                     // color: Colors.red,
+                      // color: Colors.red,
                       child: Padding(
                         padding: EdgeInsets.only(top: 10.h, left: 20.w),
                         child: Column(
@@ -531,154 +124,163 @@ class _OrderScreenState extends State<OrderScreen> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                                        padding: EdgeInsets.only(top: 20.h),
-                                        child: Container(
-                                          height: 80.h,
-                                          width: 300.w,
-                                          decoration: BoxDecoration(
-                                            color: Utils.primaryColor,
-                                            borderRadius: BorderRadius.circular(30.r),
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    isFoodBarSelected = true;
-                                                  });
-                                                },
-                                                child: Container(
-                                                  height: 80.h,
-                                                  width: 150.w,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(30.r)),
-                                                    color: isFoodBarSelected
-                                                        ? Utils.redColor
-                                                        : Utils.primaryColor,
-                                                  ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Food',
-                                                    style: isFoodBarSelected
-                                                        ? Utils.swichButtonTextStyle2
-                                                        : Utils.swichButtonTextStyle1,
-                                                  ),
-                                                ),
-                                              ),
-                                              GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    isFoodBarSelected = false;
-                                                  });
-                                                },
-                                                child: Container(
-                                                  height: 80.h,
-                                                  width: 150.w,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(30.r)),
-                                                    color: isFoodBarSelected
-                                                        ? Utils.primaryColor
-                                                        : Utils.redColor,
-                                                  ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Bar',
-                                                    style: isFoodBarSelected
-                                                        ? Utils.swichButtonTextStyle1
-                                                        : Utils.swichButtonTextStyle2,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                              padding: EdgeInsets.only(top: 20.h),
+                              child: Container(
+                                height: 80.h,
+                                width: 300.w,
+                                decoration: BoxDecoration(
+                                  color: Utils.primaryColor,
+                                  borderRadius: BorderRadius.circular(30.r),
+                                ),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isFoodBarSelected = true;
+                                        });
+                                      },
+                                      child: Container(
+                                        height: 80.h,
+                                        width: 150.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(30.r)),
+                                          color: isFoodBarSelected
+                                              ? Utils.redColor
+                                              : Utils.primaryColor,
+                                        ),
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          'Food',
+                                          style: isFoodBarSelected
+                                              ? Utils.swichButtonTextStyle2
+                                              : Utils.swichButtonTextStyle1,
                                         ),
                                       ),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isFoodBarSelected = false;
+                                        });
+                                      },
+                                      child: Container(
+                                        height: 80.h,
+                                        width: 150.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(30.r)),
+                                          color: isFoodBarSelected
+                                              ? Utils.primaryColor
+                                              : Utils.redColor,
+                                        ),
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          'Bar',
+                                          style: isFoodBarSelected
+                                              ? Utils.swichButtonTextStyle1
+                                              : Utils.swichButtonTextStyle2,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                             Padding(
-                                        padding: EdgeInsets.only(top: 20.h),
-                                        child: Container(
-                                          height: 80.h,
-                                          width: 300.w,
-                                          decoration: BoxDecoration(
-                                            color: Utils.primaryColor,
-                                            borderRadius: BorderRadius.circular(30.r),
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    isCategoryCuisineselected = true;
-                                                  });
-                                                },
-                                                child: Container(
-                                                  height: 80.h,
-                                                  width: 150.w,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(30.r)),
-                                                    color: isCategoryCuisineselected
-                                                        ? Utils.redColor
-                                                        : Utils.primaryColor,
-                                                  ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Category',
-                                                    style: isCategoryCuisineselected
-                                                        ? Utils.swichButtonTextStyle2
-                                                        : Utils.swichButtonTextStyle1,
-                                                  ),
-                                                ),
-                                              ),
-
-                                              // Cuisine Button
-                                              GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    isCategoryCuisineselected = false;
-                                                  });
-                                                },
-                                                child: Container(
-                                                  height: 80.h,
-                                                  width: 150.w,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(30.r)),
-                                                    color: isCategoryCuisineselected
-                                                        ? Utils.primaryColor
-                                                        : Utils.redColor,
-                                                  ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Cuisine',
-                                                    style: isCategoryCuisineselected
-                                                        ? Utils.swichButtonTextStyle1
-                                                        : Utils.swichButtonTextStyle2,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                              padding: EdgeInsets.only(top: 20.h),
+                              child: Container(
+                                height: 80.h,
+                                width: 300.w,
+                                decoration: BoxDecoration(
+                                  color: Utils.primaryColor,
+                                  borderRadius: BorderRadius.circular(30.r),
+                                ),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isCategoryCuisineselected = true;
+                                        });
+                                      },
+                                      child: Container(
+                                        height: 80.h,
+                                        width: 150.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(30.r)),
+                                          color: isCategoryCuisineselected
+                                              ? Utils.redColor
+                                              : Utils.primaryColor,
+                                        ),
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          'Category',
+                                          style: isCategoryCuisineselected
+                                              ? Utils.swichButtonTextStyle2
+                                              : Utils.swichButtonTextStyle1,
                                         ),
                                       ),
+                                    ),
+
+                                    // Cuisine Button
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isCategoryCuisineselected = false;
+                                        });
+                                      },
+                                      child: Container(
+                                        height: 80.h,
+                                        width: 150.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(30.r)),
+                                          color: isCategoryCuisineselected
+                                              ? Utils.primaryColor
+                                              : Utils.redColor,
+                                        ),
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          'Cuisine',
+                                          style: isCategoryCuisineselected
+                                              ? Utils.swichButtonTextStyle1
+                                              : Utils.swichButtonTextStyle2,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                             SizedBox(height: 180.h),
                             SizedBox(
-                              width: 190.w,
-                              height: size.height /1.4,
-                              child: Container(
-                               // color: Colors.grey,
-                                child: ListView.builder(
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: categoryItem.length,
-                                  itemBuilder: (context, index) {
-                                    CategoryModel categoryModel = categoryItem[index];
-                                    return CategoryitemWidget(
-                                      categoryItemName: categoryModel.categoryName,
+                              width: 175.w,
+                              height: size.height / 1.9,
+                              child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                itemCount: categoryItem.length,
+                                itemBuilder: (context, index) {
+                                  CategoryModel categoryModel =
+                                      categoryItem[index];
+                                  return Padding(
+                                    padding:  EdgeInsets.only(bottom: 20.h,),
+                                    child: CategoryitemWidget(
+                                      isSelected:
+                                      index == selectedIndex,
+                                      onTap: () {
+                                        setState(() {
+                                          selectedIndex = index;
+                                        });
+                                      },
+                                      categoryItemName:
+                                          categoryModel.categoryName,
                                       imageUrl: categoryModel.imageUrl,
-                                    );
-                                  },
-                                ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ],
@@ -703,9 +305,9 @@ class _OrderScreenState extends State<OrderScreen> {
                               Column(
                                 children: [
                                   Container(
-                                    width: 620.w,
+                                    width: 580.w,
                                     height: 90.h,
-                                    padding: EdgeInsets.all(6.w),
+                                    padding: EdgeInsets.only(left: 16.w),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(25.r),
                                       border: Border.all(
@@ -714,7 +316,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                       ),
                                     ),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           'Jahidul Islam Maruf',
@@ -724,12 +326,16 @@ class _OrderScreenState extends State<OrderScreen> {
                                               letterSpacing: 0.8,
                                               fontWeight: FontWeight.bold),
                                         ),
+                                        SizedBox(width: 60.w,),
                                         CircleAvatar(
+                                          maxRadius: 38.r,
                                           backgroundColor: Colors.grey,
-                                          child: Icon(
-                                            Icons.person,
-                                            size: 60.h,
-                                            color: Utils.primaryColor,
+                                          child: Center(
+                                            child: Icon(
+                                              Icons.person,
+                                              size: 60.h,
+                                              color: Utils.primaryColor,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -739,18 +345,20 @@ class _OrderScreenState extends State<OrderScreen> {
                                   Row(
                                     children: [
                                       Container(
-                                        width: 300.w,
+                                        width: 280.w,
                                         height: 80.h,
                                         padding: EdgeInsets.all(8.w),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(25.r),
+                                          borderRadius:
+                                              BorderRadius.circular(25.r),
                                           border: Border.all(
                                             color: Utils.primaryColor,
                                             width: 0.7.w,
                                           ),
                                         ),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               'Table No: ',
@@ -766,7 +374,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                                   '10',
                                                   style: TextStyle(
                                                       color: Utils.primaryColor,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 28.sp),
                                                 ),
                                               ),
@@ -776,18 +385,20 @@ class _OrderScreenState extends State<OrderScreen> {
                                       ),
                                       SizedBox(width: 20.w),
                                       Container(
-                                        width: 300.w,
+                                        width: 280.w,
                                         height: 80.h,
                                         padding: EdgeInsets.all(8.w),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(25.r),
+                                          borderRadius:
+                                              BorderRadius.circular(25.r),
                                           border: Border.all(
                                             color: Utils.primaryColor,
                                             width: 0.7.w,
                                           ),
                                         ),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               'Table Person: ',
@@ -803,7 +414,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                                   '10',
                                                   style: TextStyle(
                                                       color: Utils.primaryColor,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 28.sp),
                                                 ),
                                               ),
@@ -824,8 +436,6 @@ class _OrderScreenState extends State<OrderScreen> {
                 ],
               ),
             ),
-
-
 
             Positioned(
               left: 190.w,
@@ -865,18 +475,18 @@ class _OrderScreenState extends State<OrderScreen> {
                                         decoration: BoxDecoration(
                                           color: Utils.primaryColor,
                                           borderRadius:
-                                          BorderRadius.circular(35.r),
+                                              BorderRadius.circular(35.r),
                                           boxShadow: [
                                             BoxShadow(
                                               color:
-                                              Colors.black.withOpacity(0.2),
+                                                  Colors.black.withOpacity(0.2),
                                               blurRadius: 2,
                                               spreadRadius: 0,
                                               offset: Offset(2, 2),
                                             ),
                                             BoxShadow(
                                               color:
-                                              Colors.black.withOpacity(0.2),
+                                                  Colors.black.withOpacity(0.2),
                                               blurRadius: 4,
                                               spreadRadius: 0,
                                               offset: Offset(-2, -1),
@@ -891,9 +501,9 @@ class _OrderScreenState extends State<OrderScreen> {
                                                     .withOpacity(0.7)),
                                             border: InputBorder.none,
                                             contentPadding:
-                                            EdgeInsets.symmetric(
-                                                horizontal: 16.w,
-                                                vertical: 14.h),
+                                                EdgeInsets.symmetric(
+                                                    horizontal: 16.w,
+                                                    vertical: 14.h),
                                           ),
                                         ),
                                       ),
@@ -919,7 +529,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           decoration: BoxDecoration(
                                             color: Utils.primaryColor,
                                             borderRadius:
-                                            BorderRadius.circular(35.r),
+                                                BorderRadius.circular(35.r),
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Colors.black
@@ -947,7 +557,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                                     style: TextStyle(
                                                         fontSize: 29.sp,
                                                         fontWeight:
-                                                        FontWeight.bold,
+                                                            FontWeight.bold,
                                                         letterSpacing: 0.2),
                                                   ),
                                                 ),
@@ -975,9 +585,9 @@ class _OrderScreenState extends State<OrderScreen> {
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 40.w, vertical: 10.h),
                                 gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4,
-                                  childAspectRatio: 0.9,
+                                  childAspectRatio: 0.95,
                                   crossAxisSpacing: 18,
                                   mainAxisSpacing: 20,
                                 ),
@@ -1020,7 +630,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                 flex: 1,
                                 child: Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
                                       flex: 5,
@@ -1094,12 +704,11 @@ class _OrderScreenState extends State<OrderScreen> {
                               Expanded(
                                 flex: 7,
                                 child: Container(
-                                  //padding: EdgeInsets.symmetric(horizontal: 20.w),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30.r),
                                     border: Border.all(
                                       color:
-                                      Utils.secondaryColor.withOpacity(0.2),
+                                          Utils.secondaryColor.withOpacity(0.2),
                                       width: 2.w,
                                     ),
                                     color: Utils.primaryColor,
@@ -1114,112 +723,6 @@ class _OrderScreenState extends State<OrderScreen> {
                                   ),
                                   child: Column(
                                     children: [
-                                      // Padding(
-                                      //   padding: EdgeInsets.only(
-                                      //       left: 30.w, top: 5.h),
-                                      //   child: Row(
-                                      //     children: [
-                                      //       Expanded(
-                                      //         flex: 6,
-                                      //         child: Text(
-                                      //           'Item',
-                                      //           style: TextStyle(
-                                      //               fontWeight: FontWeight.bold,
-                                      //               fontSize: 28.sp,
-                                      //               color: Utils.black),
-                                      //         ),
-                                      //       ),
-                                      //       Expanded(
-                                      //         flex: 2,
-                                      //         child: Text(
-                                      //           'Qty',
-                                      //           style: TextStyle(
-                                      //               fontWeight: FontWeight.bold,
-                                      //               fontSize: 28.sp,
-                                      //               color: Utils.black),
-                                      //         ),
-                                      //       ),
-                                      //       Expanded(
-                                      //         flex: 2,
-                                      //         child: Text(
-                                      //           'Price',
-                                      //           style: TextStyle(
-                                      //               fontWeight: FontWeight.bold,
-                                      //               fontSize: 28.sp,
-                                      //               color: Utils.black),
-                                      //         ),
-                                      //       )
-                                      //     ],
-                                      //   ),
-                                      // ),
-                                      // Divider(),
-                                      // ListView.builder(
-                                      //   itemCount: 10,
-                                      //   itemBuilder: (context, index) {
-                                      //     return Column(
-                                      //       children: [
-                                      //         Padding(
-                                      //           padding: EdgeInsets.only(
-                                      //               left: 30.w, top: 5.h),
-                                      //           child: Row(
-                                      //             children: [
-                                      //               Expanded(
-                                      //                 flex: 5,
-                                      //                 child: Text(
-                                      //                   maxLines: 2,
-                                      //                   'Classic Smashed Cheeseburger',
-                                      //                   style: TextStyle(
-                                      //                       fontWeight: FontWeight.bold,
-                                      //                       fontSize: 24.sp,
-                                      //                       color: Utils.black),
-                                      //                 ),
-                                      //               ),
-                                      //               Expanded(
-                                      //                   flex: 2,
-                                      //                   child: Padding(
-                                      //                     padding: EdgeInsets.symmetric(
-                                      //                         horizontal: 25.w),
-                                      //                     child: Container(
-                                      //                       height: 80.h,
-                                      //                       //width: 20.w,
-                                      //                       decoration: BoxDecoration(
-                                      //                         borderRadius:
-                                      //                         BorderRadius.circular(
-                                      //                             20.r),
-                                      //                         color:
-                                      //                         Utils.secondaryColor,
-                                      //                       ),
-                                      //                       child: Center(
-                                      //                         child: Text(
-                                      //                           '3',
-                                      //                           style: TextStyle(
-                                      //                               fontSize: 28.sp,
-                                      //                               fontWeight:
-                                      //                               FontWeight.bold,
-                                      //                               color: Utils
-                                      //                                   .primaryColor),
-                                      //                         ),
-                                      //                       ),
-                                      //                     ),
-                                      //                   )),
-                                      //               Expanded(
-                                      //                 flex: 2,
-                                      //                 child: Text(
-                                      //                   "\$${75}",
-                                      //                   style: TextStyle(
-                                      //                       fontWeight: FontWeight.bold,
-                                      //                       fontSize: 28.sp,
-                                      //                       color: Utils.black),
-                                      //                 ),
-                                      //               ),
-                                      //             ],
-                                      //           ),
-                                      //         ),
-                                      //         SizedBox(height: 10.h,),
-                                      //       ],
-                                      //     );
-                                      //   }
-                                      // )
 
                                       Expanded(
                                         child: Column(
@@ -1235,8 +738,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                                       'Item',
                                                       style: TextStyle(
                                                           fontWeight:
-                                                          FontWeight.bold,
-                                                          fontSize: 28.sp,
+                                                              FontWeight.bold,
+                                                          fontSize: 30.sp,
                                                           color: Utils.black),
                                                     ),
                                                   ),
@@ -1247,8 +750,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                                       'Qty',
                                                       style: TextStyle(
                                                           fontWeight:
-                                                          FontWeight.bold,
-                                                          fontSize: 28.sp,
+                                                              FontWeight.bold,
+                                                          fontSize: 30.sp,
                                                           color: Utils.black),
                                                     ),
                                                   ),
@@ -1261,8 +764,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                                         'Price',
                                                         style: TextStyle(
                                                             fontWeight:
-                                                            FontWeight.bold,
-                                                            fontSize: 28.sp,
+                                                                FontWeight.bold,
+                                                            fontSize: 30.sp,
                                                             color: Utils.black),
                                                       ),
                                                     ),
@@ -1277,7 +780,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                                 itemBuilder: (context, index) {
                                                   return Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 10.w,
+                                                        left: 15.w,
                                                         top: 10.h,
                                                         right: 42.w),
                                                     child: Column(
@@ -1289,30 +792,30 @@ class _OrderScreenState extends State<OrderScreen> {
                                                               child: Text(
                                                                 'Classic Smashed Cheeseburger',
                                                                 style:
-                                                                TextStyle(
+                                                                    TextStyle(
                                                                   fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
+                                                                      FontWeight
+                                                                          .w500,
                                                                   fontSize:
-                                                                  28.sp,
+                                                                      28.sp,
                                                                   color: Utils
                                                                       .black,
                                                                 ),
                                                                 maxLines: 2,
                                                                 overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
+                                                                    TextOverflow
+                                                                        .ellipsis,
                                                               ),
                                                             ),
                                                             Container(
-                                                              height: 90.h,
-                                                              width: 80.w,
+                                                              height: 80.h,
+                                                              width: 75.w,
                                                               decoration:
-                                                              BoxDecoration(
+                                                                  BoxDecoration(
                                                                 borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                    20.r),
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            20.r),
                                                                 color: Utils
                                                                     .secondaryColor,
                                                               ),
@@ -1320,12 +823,12 @@ class _OrderScreenState extends State<OrderScreen> {
                                                                 child: Text(
                                                                   '10',
                                                                   style:
-                                                                  TextStyle(
+                                                                      TextStyle(
                                                                     fontSize:
-                                                                    32.sp,
+                                                                        32.sp,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
+                                                                        FontWeight
+                                                                            .w500,
                                                                     color: Utils
                                                                         .primaryColor,
                                                                   ),
@@ -1337,18 +840,18 @@ class _OrderScreenState extends State<OrderScreen> {
                                                               child: Text(
                                                                 "\$75",
                                                                 style:
-                                                                TextStyle(
+                                                                    TextStyle(
                                                                   fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
+                                                                      FontWeight
+                                                                          .w500,
                                                                   fontSize:
-                                                                  28.sp,
+                                                                      28.sp,
                                                                   color: Utils
                                                                       .black,
                                                                 ),
                                                                 textAlign:
-                                                                TextAlign
-                                                                    .right,
+                                                                    TextAlign
+                                                                        .right,
                                                               ),
                                                             ),
                                                           ],
@@ -1378,7 +881,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                     borderRadius: BorderRadius.circular(30.r),
                                     border: Border.all(
                                       color:
-                                      Utils.secondaryColor.withOpacity(0.2),
+                                          Utils.secondaryColor.withOpacity(0.2),
                                       width: 2.w,
                                     ),
                                     color: Utils.primaryColor,
@@ -1393,7 +896,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                   ),
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Expanded(
                                         flex: 4,
@@ -1403,7 +906,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           decoration: BoxDecoration(
                                             color: Utils.primaryColor,
                                             borderRadius:
-                                            BorderRadius.circular(25.r),
+                                                BorderRadius.circular(25.r),
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Colors.black
@@ -1416,15 +919,17 @@ class _OrderScreenState extends State<OrderScreen> {
                                           ),
                                           child: TextField(
                                             decoration: InputDecoration(
+
                                               hintText: 'Apply Promo Code',
                                               hintStyle: TextStyle(
+                                                fontSize: 28.sp,
                                                   color: Utils.secondaryColor
-                                                      .withOpacity(0.7)),
+                                                      .withOpacity(0.7),
+                                              ),
                                               border: InputBorder.none,
                                               contentPadding:
-                                              EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: 14.h),
+                                                  EdgeInsets.only(bottom: 30.h,left: 30.w
+                                                  )
                                             ),
                                           ),
                                         ),
@@ -1482,7 +987,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           textStyle: TextStyle(
                                               color: Utils.primaryColor,
                                               fontSize: 28.sp,
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w500,
                                               letterSpacing: 0.2),
                                           backgroundColor: Utils.secondaryColor,
                                           height: 70.h,
@@ -1503,7 +1008,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                     borderRadius: BorderRadius.circular(30.r),
                                     border: Border.all(
                                       color:
-                                      Utils.secondaryColor.withOpacity(0.2),
+                                          Utils.secondaryColor.withOpacity(0.2),
                                       width: 2.w,
                                     ),
                                     color: Utils.secondaryColor,
@@ -1527,21 +1032,21 @@ class _OrderScreenState extends State<OrderScreen> {
                                         Expanded(
                                           child: Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 'Discount',
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 19.sp,
+                                                    fontSize: 20.sp,
                                                     color: Utils.primaryColor),
                                               ),
                                               Text(
                                                 "\$${75}",
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 19.sp,
-                                                    color: Utils.primaryColor),
+                                                    fontSize: 20.sp,
+                                                    color: Utils.primaryColor)
                                               ),
                                             ],
                                           ),
@@ -1550,21 +1055,21 @@ class _OrderScreenState extends State<OrderScreen> {
                                         Expanded(
                                           child: Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 'Tips',
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 19.sp,
-                                                    color: Utils.primaryColor),
+                                                    fontSize: 20.sp,
+                                                    color: Utils.primaryColor)
                                               ),
                                               Text(
                                                 "\$${75}",
-                                                style: TextStyle(
+                                                style:TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 19.sp,
-                                                    color: Utils.primaryColor),
+                                                    fontSize: 20.sp,
+                                                    color: Utils.primaryColor)
                                               ),
                                             ],
                                           ),
@@ -1573,21 +1078,21 @@ class _OrderScreenState extends State<OrderScreen> {
                                         Expanded(
                                           child: Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 'Vat',
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 19.sp,
-                                                    color: Utils.primaryColor),
+                                                    fontSize: 20.sp,
+                                                    color: Utils.primaryColor)
                                               ),
                                               Text(
                                                 "\$${75}",
-                                                style: TextStyle(
+                                                style:TextStyle(
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 19.sp,
-                                                    color: Utils.primaryColor),
+                                                    fontSize: 20.sp,
+                                                    color: Utils.primaryColor)
                                               ),
                                             ],
                                           ),
@@ -1596,7 +1101,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                         Expanded(
                                           child: Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 'Total',
@@ -1620,143 +1125,41 @@ class _OrderScreenState extends State<OrderScreen> {
                                           flex: 2,
                                           child: Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
-                                              // GestureDetector(
-                                              //   onTap: () {
-                                              //     print('dsf');
-                                              //   },
-                                              //   child: Container(
-                                              //     width: 240.w,
-                                              //     height: 80.h,
-                                              //     decoration: BoxDecoration(
-                                              //       color: Utils.primaryColor,
-                                              //       borderRadius:
-                                              //           BorderRadius.circular(
-                                              //               25.r),
-                                              //       boxShadow: [
-                                              //         BoxShadow(
-                                              //           color: Colors.black
-                                              //               .withOpacity(0.2),
-                                              //           blurRadius: 2,
-                                              //           spreadRadius: 0,
-                                              //           offset: Offset(2, 2),
-                                              //         ),
-                                              //         BoxShadow(
-                                              //           color: Colors.black
-                                              //               .withOpacity(0.2),
-                                              //           blurRadius: 4,
-                                              //           spreadRadius: 0,
-                                              //           offset: Offset(-2, -1),
-                                              //         ),
-                                              //       ],
-                                              //     ),
-                                              //     child: Row(
-                                              //       children: [
-                                              //         Expanded(
-                                              //           flex: 3,
-                                              //           child:
-                                              //               Icon(Icons.print),
-                                              //         ),
-                                              //         Expanded(
-                                              //           flex: 4,
-                                              //           child: Text(
-                                              //             'Guest',
-                                              //             style: TextStyle(
-                                              //               fontWeight:
-                                              //                   FontWeight.w500,
-                                              //               fontSize: 24.sp,
-                                              //               color: Utils.black,
-                                              //             ),
-                                              //           ),
-                                              //         )
-                                              //       ],
-                                              //     ),
-                                              //   ),
-                                              // ),
+
 
                                               CustomButton2Widget(
                                                 width: 240.w,
                                                 height: 80.h,
                                                 label: 'Guest',
                                                 textStyle: TextStyle(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 24.sp,
-                                                  color: Utils.black,
-                                                ),
+                                                    color: Utils.black,
+                                                    fontSize: 26.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                   ),
                                                 icon: Icons.print,
                                                 onTap: () {},
                                                 iconColor: Utils.black,
                                                 backgroundColor:
-                                                Utils.primaryColor,
+                                                    Utils.primaryColor,
                                               ),
 
-                                              // GestureDetector(
-                                              //   onTap: () {
-                                              //     print('dsf');
-                                              //   },
-                                              //   child: Container(
-                                              //     width: 240.w,
-                                              //     height: 80.h,
-                                              //     decoration: BoxDecoration(
-                                              //       color: Utils.primaryColor,
-                                              //       borderRadius:
-                                              //           BorderRadius.circular(
-                                              //               25.r),
-                                              //       boxShadow: [
-                                              //         BoxShadow(
-                                              //           color: Colors.black
-                                              //               .withOpacity(0.2),
-                                              //           blurRadius: 2,
-                                              //           spreadRadius: 0,
-                                              //           offset: Offset(2, 2),
-                                              //         ),
-                                              //         BoxShadow(
-                                              //           color: Colors.black
-                                              //               .withOpacity(0.2),
-                                              //           blurRadius: 4,
-                                              //           spreadRadius: 0,
-                                              //           offset: Offset(-2, -1),
-                                              //         ),
-                                              //       ],
-                                              //     ),
-                                              //     child: Row(
-                                              //       children: [
-                                              //         Expanded(
-                                              //           flex: 3,
-                                              //           child:
-                                              //               Icon(Icons.print),
-                                              //         ),
-                                              //         Expanded(
-                                              //           flex: 4,
-                                              //           child: Text(
-                                              //             'Kitchen',
-                                              //             style: TextStyle(
-                                              //               fontWeight:
-                                              //                   FontWeight.w500,
-                                              //               fontSize: 24.sp,
-                                              //               color: Utils.black,
-                                              //             ),
-                                              //           ),
-                                              //         )
-                                              //       ],
-                                              //     ),
-                                              //   ),
-                                              // ),
+
                                               CustomButton2Widget(
                                                 width: 240.w,
                                                 height: 80.h,
                                                 label: 'Kitchen',
                                                 textStyle: TextStyle(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 24.sp,
                                                   color: Utils.black,
+                                                  fontSize: 26.sp,
+                                                  fontWeight: FontWeight.w500,
                                                 ),
                                                 icon: Icons.print,
                                                 onTap: () {},
                                                 iconColor: Utils.black,
                                                 backgroundColor:
-                                                Utils.primaryColor,
+                                                    Utils.primaryColor,
                                               ),
                                             ],
                                           ),
@@ -1777,7 +1180,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                     borderRadius: BorderRadius.circular(30.r),
                                     border: Border.all(
                                       color:
-                                      Utils.secondaryColor.withOpacity(0.2),
+                                          Utils.secondaryColor.withOpacity(0.2),
                                       width: 2.w,
                                     ),
                                     color: Utils.primaryColor,
@@ -1795,140 +1198,40 @@ class _OrderScreenState extends State<OrderScreen> {
                                         horizontal: 10.w, vertical: 10.h),
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       //crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
                                         Column(
                                           children: [
-                                            // Expanded(
-                                            //   child: GestureDetector(
-                                            //     onTap: () {
-                                            //       print('dsf');
-                                            //     },
-                                            //     child: Container(
-                                            //       width: 300.w,
-                                            //       //height: 80.h,
-                                            //       decoration: BoxDecoration(
-                                            //         color: Utils.greenColor,
-                                            //         borderRadius:
-                                            //             BorderRadius.circular(
-                                            //                 20.r),
-                                            //         boxShadow: [
-                                            //           BoxShadow(
-                                            //             color: Colors.black
-                                            //                 .withOpacity(0.2),
-                                            //             blurRadius: 2,
-                                            //             spreadRadius: 0,
-                                            //             offset: Offset(2, 2),
-                                            //           ),
-                                            //           BoxShadow(
-                                            //             color: Colors.black
-                                            //                 .withOpacity(0.2),
-                                            //             blurRadius: 4,
-                                            //             spreadRadius: 0,
-                                            //             offset: Offset(-2, -1),
-                                            //           ),
-                                            //         ],
-                                            //       ),
-                                            //       child: Center(
-                                            //         child: Text(
-                                            //           'Confirm Order',
-                                            //           style: TextStyle(
-                                            //             fontWeight:
-                                            //                 FontWeight.w500,
-                                            //             fontSize: 24.sp,
-                                            //             color:
-                                            //                 Utils.primaryColor,
-                                            //           ),
-                                            //         ),
-                                            //       ),
-                                            //     ),
-                                            //   ),
-                                            // ),
+
                                             Expanded(
                                               child: CustomButton2Widget(
                                                 width: 300.w,
                                                 label: 'Confirm Order',
                                                 textStyle: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 26.sp,
-                                                    color: Utils.primaryColor),
+                                                  color: Utils.primaryColor,
+                                                  fontSize: 26.sp,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                                 onTap: () {},
                                                 backgroundColor:
-                                                Utils.greenColor,
+                                                    Utils.greenColor,
                                                 iconColor: Utils.primaryColor,
                                               ),
                                             ),
                                             SizedBox(
                                               height: 8.h,
                                             ),
-                                            // Expanded(
-                                            //   child: GestureDetector(
-                                            //     onTap: () {
-                                            //       print('dsf');
-                                            //     },
-                                            //     child: Container(
-                                            //       width: 300.w,
-                                            //       //height: 80.h,
-                                            //       decoration: BoxDecoration(
-                                            //         color: Utils.redColor,
-                                            //         borderRadius:
-                                            //             BorderRadius.circular(
-                                            //                 20.r),
-                                            //         boxShadow: [
-                                            //           BoxShadow(
-                                            //             color: Colors.black
-                                            //                 .withOpacity(0.2),
-                                            //             blurRadius: 2,
-                                            //             spreadRadius: 0,
-                                            //             offset: Offset(2, 2),
-                                            //           ),
-                                            //           BoxShadow(
-                                            //             color: Colors.black
-                                            //                 .withOpacity(0.2),
-                                            //             blurRadius: 4,
-                                            //             spreadRadius: 0,
-                                            //             offset: Offset(-2, -1),
-                                            //           ),
-                                            //         ],
-                                            //       ),
-                                            //       child: Row(
-                                            //         children: [
-                                            //           Expanded(
-                                            //             flex: 2,
-                                            //             child: Icon(
-                                            //               Icons.cancel_outlined,
-                                            //               color: Utils
-                                            //                   .primaryColor,
-                                            //               size: 40.h,
-                                            //             ),
-                                            //           ),
-                                            //           Expanded(
-                                            //             flex: 4,
-                                            //             child: Text(
-                                            //               'Cancel Order',
-                                            //               style: TextStyle(
-                                            //                 fontWeight:
-                                            //                     FontWeight.w500,
-                                            //                 fontSize: 24.sp,
-                                            //                 color: Utils
-                                            //                     .primaryColor,
-                                            //               ),
-                                            //             ),
-                                            //           )
-                                            //         ],
-                                            //       ),
-                                            //     ),
-                                            //   ),
-                                            // ),
+
                                             Expanded(
                                               child: CustomButton2Widget(
                                                 width: 300.w,
                                                 label: 'Cancel Order',
-                                                textStyle: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 26.sp,
-                                                    color: Utils.primaryColor),
+                                                textStyle:  TextStyle(
+                                                  color: Utils.primaryColor,
+                                                  fontSize: 26.sp,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                                 icon: Icons.cancel_outlined,
                                                 onTap: () {},
                                                 backgroundColor: Utils.redColor,
@@ -1940,66 +1243,14 @@ class _OrderScreenState extends State<OrderScreen> {
                                         SizedBox(
                                           width: 10.w,
                                         ),
-                                        // GestureDetector(
-                                        //   onTap: () {
-                                        //     print('dsf');
-                                        //   },
-                                        //   child: Container(
-                                        //     width: 300.w,
-                                        //     height: 120.h,
-                                        //     decoration: BoxDecoration(
-                                        //       color: Utils.greenColor,
-                                        //       borderRadius:
-                                        //           BorderRadius.circular(20.r),
-                                        //       boxShadow: [
-                                        //         BoxShadow(
-                                        //           color: Colors.black
-                                        //               .withOpacity(0.2),
-                                        //           blurRadius: 2,
-                                        //           spreadRadius: 0,
-                                        //           offset: Offset(2, 2),
-                                        //         ),
-                                        //         BoxShadow(
-                                        //           color: Colors.black
-                                        //               .withOpacity(0.2),
-                                        //           blurRadius: 4,
-                                        //           spreadRadius: 0,
-                                        //           offset: Offset(-2, -1),
-                                        //         ),
-                                        //       ],
-                                        //     ),
-                                        //     child: Row(
-                                        //       children: [
-                                        //         Expanded(
-                                        //           flex: 3,
-                                        //           child: Icon(
-                                        //             Icons.payments_outlined,
-                                        //             color: Utils.primaryColor,
-                                        //           ),
-                                        //         ),
-                                        //         Expanded(
-                                        //           flex: 4,
-                                        //           child: Text(
-                                        //             'Payment',
-                                        //             style: TextStyle(
-                                        //               fontWeight:
-                                        //                   FontWeight.bold,
-                                        //               fontSize: 28.sp,
-                                        //               color: Utils.primaryColor,
-                                        //             ),
-                                        //           ),
-                                        //         )
-                                        //       ],
-                                        //     ),
-                                        //   ),
-                                        // ),
 
                                         CustomButton2Widget(
                                           label: 'Payment',
                                           textStyle: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 28.sp,
-                                              color: Utils.primaryColor),
+                                            color: Utils.primaryColor,
+                                            fontSize: 28.sp,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                           onTap: () {},
                                           height: 120.h,
                                           width: 300.w,
