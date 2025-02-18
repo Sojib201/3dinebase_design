@@ -443,8 +443,7 @@ class _OrderScreenState extends State<OrderScreen> {
               child: Container(
                 height: size.height - padding.bottom - padding.top - 250.h,
                 width: size.width - 190.w,
-                // width: 200,
-                //padding: EdgeInsets.only(left: 20.w, top: 20.h),
+
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(90.r),
