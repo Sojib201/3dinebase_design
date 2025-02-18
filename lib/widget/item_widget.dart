@@ -76,16 +76,14 @@ class ItemWidget extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.only(left: 14.w,right: 1.w,top: 50.h),
+                padding: EdgeInsets.only(left: 10.w,right: 10.w,top: 50.h),
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 5,
                       child: Text(itemName,
                           maxLines: 2, style: Utils.itemTextStyle),
                     ),
-                    Expanded(
-                      flex: 2,
+                    FittedBox(
                       child: Text("\$${price.toString()}",
                           style: Utils.itemPriceTextStyle),
                     ),

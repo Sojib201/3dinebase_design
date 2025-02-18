@@ -12,12 +12,12 @@ class Utils {
 
   static TextStyle itemTextStyle =  TextStyle(
       fontWeight: FontWeight.bold,
-      fontSize:24.sp,
+      fontSize:30.sp,
       color: Utils.secondaryColor
   );
   static TextStyle itemPriceTextStyle =  TextStyle(
       fontWeight: FontWeight.bold,
-      fontSize:24.sp,
+      fontSize:30.sp,
       color: Utils.redColor
   );
 
