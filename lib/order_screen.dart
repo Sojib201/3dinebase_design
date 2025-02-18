@@ -1,9 +1,11 @@
 import 'package:action_panel/model/category_model.dart';
 import 'package:action_panel/model/item_model.dart';
+import 'package:action_panel/model/item_price_model.dart';
 import 'package:action_panel/utils/styles.dart';
 import 'package:action_panel/widget/categoryItem_widget.dart';
 import 'package:action_panel/widget/custom_button2_widget.dart';
 import 'package:action_panel/widget/custom_switch_button.dart';
+import 'package:action_panel/widget/item_price_list_widget.dart';
 import 'package:action_panel/widget/item_widget.dart';
 import 'package:action_panel/widget/tableCard.dart';
 import 'package:action_panel/widget/toggle_button.dart';
@@ -22,7 +24,7 @@ class OrderScreen extends StatefulWidget {
 class _OrderScreenState extends State<OrderScreen> {
   List<ItemModel> item = [
     ItemModel(
-        itemName: 'Classic Smashed Cheeseburger hui hgbuy yguy yug',
+        itemName: 'Classic Smashed ',
         price: 20,
         imageUrl: 'assets/burger.png'),
     ItemModel(
@@ -86,6 +88,30 @@ class _OrderScreenState extends State<OrderScreen> {
       categoryName: 'Burger',
       imageUrl: 'assets/burger.png',
     ),
+  ];
+
+  List<ItemPriceListModel> itemPriceList = [
+    ItemPriceListModel(
+        itemName: 'Classic Smashed Cheeseburgr', price: 75, qty: '10'),
+    ItemPriceListModel(
+        itemName: 'Chicken fry', price: 80, qty: '5'),
+    ItemPriceListModel(
+        itemName: 'Burgr', price: 90, qty: '3'),
+    ItemPriceListModel(
+        itemName: 'Classic Smashed Cheeseburgrr', price: 10, qty: '7'),
+    ItemPriceListModel(
+        itemName: 'Pizza', price: 100, qty: '2'),
+    ItemPriceListModel(
+        itemName: 'Sandwich', price: 150, qty: '7'),
+    ItemPriceListModel(
+        itemName: 'Nachos', price: 90, qty: '1'),
+    ItemPriceListModel(
+        itemName: 'Classic Smashed Cheeseburgr', price: 10, qty: '8'),
+    ItemPriceListModel(
+        itemName: 'Pizza', price: 100, qty: '6'),
+    ItemPriceListModel(
+        itemName: 'Burger', price: 90, qty: '3'),
+
   ];
 
   TextEditingController searchController = TextEditingController();
@@ -635,47 +661,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                         style: Utils.orderTextStyle,
                                       ),
                                     ),
-                                    // GestureDetector(
-                                    //   onTap: () {
-                                    //     print('dsf');
-                                    //   },
-                                    //   child: Container(
-                                    //     padding: EdgeInsets.symmetric(
-                                    //         vertical: 10.h, horizontal: 20),
-                                    //     height: 70.h,
-                                    //     decoration: BoxDecoration(
-                                    //       color: Utils.secondaryColor,
-                                    //       borderRadius:
-                                    //           BorderRadius.circular(20.r),
-                                    //       boxShadow: [
-                                    //         BoxShadow(
-                                    //           color:
-                                    //               Colors.black.withOpacity(0.2),
-                                    //           blurRadius: 2,
-                                    //           spreadRadius: 0,
-                                    //           offset: Offset(2, 2),
-                                    //         ),
-                                    //         BoxShadow(
-                                    //           color:
-                                    //               Colors.black.withOpacity(0.2),
-                                    //           blurRadius: 4,
-                                    //           spreadRadius: 0,
-                                    //           offset: Offset(-2, -1),
-                                    //         ),
-                                    //       ],
-                                    //     ),
-                                    //     child: Center(
-                                    //       child: Text(
-                                    //         'Convert',
-                                    //         style: TextStyle(
-                                    //             color: Utils.primaryColor,
-                                    //             fontSize: 28.sp,
-                                    //             fontWeight: FontWeight.w500,
-                                    //             letterSpacing: 0.2),
-                                    //       ),
-                                    //     ),
-                                    //   ),
-                                    // ),
+
 
                                     Expanded(
                                       flex: 2,
@@ -772,88 +758,116 @@ class _OrderScreenState extends State<OrderScreen> {
                                             const Divider(),
                                             Expanded(
                                               child: ListView.builder(
-                                                itemCount: 10,
+                                                // itemCount: 10,
+                                                // itemBuilder: (context, index) {
+                                                //   return Padding(
+                                                //     padding: EdgeInsets.only(
+                                                //         left: 15.w,
+                                                //         top: 10.h,
+                                                //         right: 42.w),
+                                                //     child: Column(
+                                                //       children: [
+                                                //         // Row(
+                                                //         //   children: [
+                                                //         //     Expanded(
+                                                //         //       flex: 6,
+                                                //         //       child: Text(
+                                                //         //         'Classic Smashed Cheeseburger',
+                                                //         //         style:
+                                                //         //             TextStyle(
+                                                //         //           fontWeight:
+                                                //         //               FontWeight
+                                                //         //                   .w500,
+                                                //         //           fontSize:
+                                                //         //               28.sp,
+                                                //         //           color: Utils
+                                                //         //               .black,
+                                                //         //         ),
+                                                //         //         maxLines: 2,
+                                                //         //         overflow:
+                                                //         //             TextOverflow
+                                                //         //                 .ellipsis,
+                                                //         //       ),
+                                                //         //     ),
+                                                //         //     Container(
+                                                //         //       height: 80.h,
+                                                //         //       width: 75.w,
+                                                //         //       decoration:
+                                                //         //           BoxDecoration(
+                                                //         //         borderRadius:
+                                                //         //             BorderRadius
+                                                //         //                 .circular(
+                                                //         //                     20.r),
+                                                //         //         color: Utils
+                                                //         //             .secondaryColor,
+                                                //         //       ),
+                                                //         //       child: Center(
+                                                //         //         child: Text(
+                                                //         //           '10',
+                                                //         //           style:
+                                                //         //               TextStyle(
+                                                //         //             fontSize:
+                                                //         //                 32.sp,
+                                                //         //             fontWeight:
+                                                //         //                 FontWeight
+                                                //         //                     .w500,
+                                                //         //             color: Utils
+                                                //         //                 .primaryColor,
+                                                //         //           ),
+                                                //         //         ),
+                                                //         //       ),
+                                                //         //     ),
+                                                //         //     Expanded(
+                                                //         //       flex: 2,
+                                                //         //       child: Text(
+                                                //         //         "\$75",
+                                                //         //         style:
+                                                //         //             TextStyle(
+                                                //         //           fontWeight:
+                                                //         //               FontWeight
+                                                //         //                   .w500,
+                                                //         //           fontSize:
+                                                //         //               28.sp,
+                                                //         //           color: Utils
+                                                //         //               .black,
+                                                //         //         ),
+                                                //         //         textAlign:
+                                                //         //             TextAlign
+                                                //         //                 .right,
+                                                //         //       ),
+                                                //         //     ),
+                                                //         //   ],
+                                                //         // ),
+                                                //         ItemPriceListWidget(itemName: '', qty: null, price: null,),
+                                                //         SizedBox(height: 15.h),
+                                                //       ],
+                                                //     ),
+                                                //   );
+                                                // },
+
+                                                scrollDirection: Axis.vertical,
+                                                itemCount: itemPriceList.length,
                                                 itemBuilder: (context, index) {
+                                                  ItemPriceListModel
+                                                      itemPriceListModel =
+                                                      itemPriceList[index];
                                                   return Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 15.w,
                                                         top: 10.h,
                                                         right: 42.w),
                                                     child: Column(
-                                                      children: [
-                                                        Row(
-                                                          children: [
-                                                            Expanded(
-                                                              flex: 6,
-                                                              child: Text(
-                                                                'Classic Smashed Cheeseburger',
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontSize:
-                                                                      28.sp,
-                                                                  color: Utils
-                                                                      .black,
-                                                                ),
-                                                                maxLines: 2,
-                                                                overflow:
-                                                                    TextOverflow
-                                                                        .ellipsis,
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              height: 80.h,
-                                                              width: 75.w,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20.r),
-                                                                color: Utils
-                                                                    .secondaryColor,
-                                                              ),
-                                                              child: Center(
-                                                                child: Text(
-                                                                  '10',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        32.sp,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    color: Utils
-                                                                        .primaryColor,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 2,
-                                                              child: Text(
-                                                                "\$75",
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontSize:
-                                                                      28.sp,
-                                                                  color: Utils
-                                                                      .black,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .right,
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        SizedBox(height: 15.h),
-                                                      ],
+                                                      children:[
+                                                      ItemPriceListWidget(
+                                                      itemName: itemPriceListModel
+                                                      .itemName,
+                                                      qty: itemPriceListModel.qty,
+                                                      price: itemPriceListModel
+                                                          .price,
+                                                    ),
+                                                        SizedBox(height:10.h),
+
+                                                      ]
                                                     ),
                                                   );
                                                 },
