@@ -331,11 +331,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                           maxRadius: 38.r,
                                           backgroundColor: Colors.grey,
                                           child: Center(
-                                            child: Icon(
-                                              Icons.person,
-                                              size: 60.h,
-                                              color: Utils.primaryColor,
-                                            ),
+                                            child: Image.asset('assets/person.png')
                                           ),
                                         ),
                                       ],
