@@ -34,15 +34,7 @@ class CategoryitemWidget extends StatelessWidget {
             topLeft: Radius.circular(45.r),
             bottomLeft: Radius.circular(45.r),
           ),
-          // boxShadow: isSelected
-          //     ? [
-          //         BoxShadow(
-          //           color: Utils.secondaryColor.withOpacity(0.5),
-          //           blurRadius: 10,
-          //           offset: Offset(0.w, 0.h),
-          //         ),
-          //       ]
-          //     : [],
+
         ),
         child: Column(
           children: [

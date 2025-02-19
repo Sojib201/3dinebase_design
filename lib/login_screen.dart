@@ -46,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 2,
                   child: TextField(
+                    textInputAction: TextInputAction.next,
                     onSubmitted: (value) {},
                     controller: cidController,
                     autofocus: true,
@@ -82,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 2,
                   child: TextField(
+                    textInputAction: TextInputAction.next,
                     onSubmitted: (value) {},
                     controller: userIdController,
                     autofocus: true,
@@ -117,6 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 2,
                   child: TextField(
+                    textInputAction: TextInputAction.done,
                     onSubmitted: (value) {},
                     controller: passwordController,
                     autofocus: true,
